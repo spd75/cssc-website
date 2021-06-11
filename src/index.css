@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,6 +10,13 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Arvo', 'sans-serif', 'Helvetica Neue', cursive;
+}
+
+.button {
+  background-color: 'black';
+}
+
+.button:hover {
+  cursor: 'pointer';
 }
