@@ -1,8 +1,13 @@
 import NavItem from '../elemental/NavItem';
 import React from 'react';
+import Separator from '../elemental/Separator';
+
+const InvalidProps = Error('Number of navlinks and oncliks are not the same');
+InvalidProps.name = 'InvalidProps';
 
 type NavLinkBarProps = {
     navLinks: string[];
+    onClicks: (() => void)[];
     textPadding: number;
 };
 
@@ -10,8 +15,13 @@ export default class NavLinkBar extends React.Component<NavLinkBarProps, any> {
     constructor(props: NavLinkBarProps) {
         super(props);
 
+        if (props.navLinks.length !== props.onClicks.length) {
+            throw InvalidProps;
+        }
+
         this.state = {
             navLinks: props.navLinks,
+            onClicks: props.onClicks,
             textPadding: props.textPadding
         };
     }
@@ -24,11 +34,12 @@ export default class NavLinkBar extends React.Component<NavLinkBarProps, any> {
                 <NavItem
                     text={st.navLinks[i]}
                     textPadding={st.textPadding}
-                    onClick={() => {
-                        console.log('hello');
-                    }}
+                    onClick={st.onClicks[i]}
                 />
             );
+            if (i !== st.navLinks.length - 1) {
+                navLinks.push(<Separator offset={10} />);
+            }
         }
         return navLinks;
     };
@@ -36,13 +47,14 @@ export default class NavLinkBar extends React.Component<NavLinkBarProps, any> {
     containerStyle = () => {
         return {
             background: 'fff',
-            display: 'flex'
+            display: 'flex',
+            alignItems: 'stretch'
         };
     };
 
     render = () => {
         const st = this.state;
 
-        return <div style={this.containerStyle()}>{this.renderNavLinks()};</div>;
+        return <div style={this.containerStyle()}>{this.renderNavLinks()}</div>;
     };
 }

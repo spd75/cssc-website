@@ -45,7 +45,6 @@ export default class StanButton extends Hoverable<StanButtonProps> {
         return (
             <button
                 style={this.buttonStyle(150)}
-                className={this.buttonStyle(150)}
                 onClick={this.state.onClick}
                 onMouseEnter={this.setHovered}
                 onMouseLeave={this.setUnhovered}
