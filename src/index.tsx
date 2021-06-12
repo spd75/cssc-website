@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import StanButton from './StanButton';
 import reportWebVitals from './reportWebVitals';
+
+/** Components */
+import StanButton from './components/elemental/StanButton';
+import NavItem from './components/elemental/NavItem';
+import NavLinkBar from './components/complex/NavLinkBar';
 
 ReactDOM.render(
     <React.StrictMode>
@@ -12,6 +16,17 @@ ReactDOM.render(
             }}
             title="Hello there sir"
             traditional={true}
+        />
+        <NavItem
+            onClick={() => {
+                console.log('It worked pt 2');
+            }}
+            text="Equipment"
+            textPadding={20}
+        />
+        <NavLinkBar
+            navLinks={['Club News', 'Trips', 'Equipment', 'About Us', 'Contact Us']}
+            textPadding={25}
         />
     </React.StrictMode>,
     document.getElementById('root')

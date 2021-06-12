@@ -1,6 +1,4 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import './index.css';
+import Hoverable from '../super-comps/Hoverable';
 
 type StanButtonProps = {
     title: string;
@@ -8,7 +6,7 @@ type StanButtonProps = {
     onClick: () => void;
 };
 
-export default class StanButton extends React.Component<StanButtonProps, any> {
+export default class StanButton extends Hoverable<StanButtonProps> {
     constructor(props: StanButtonProps) {
         super(props);
 
@@ -17,31 +15,18 @@ export default class StanButton extends React.Component<StanButtonProps, any> {
             primColor: props.traditional ? '#48A8DE' : '#fff',
             secColor: props.traditional ? '#fff' : '#505050',
             hoverColor: props.traditional ? '#4084CB' : '#aaa',
-            hovering: false,
             onClick: props.onClick
         };
     }
 
-    setButtonHovered = () => {
-        this.setState({
-            hovering: true
-        });
-    };
-
-    setButtonUnhovered = () => {
-        this.setState({
-            hovering: false
-        });
-    };
-
     buttonStyle = (width: number): any => {
-        const state = this.state;
+        const st = this.state;
 
         return {
             width: `${width}px`,
             height: `${width * 0.2}px`,
-            backgroundColor: !state.hovering ? state.primColor : state.hoverColor,
-            cursor: !state.hovering ? 'auto' : 'pointer',
+            backgroundColor: !st.hovering ? st.primColor : st.hoverColor,
+            cursor: !st.hovering ? 'auto' : 'pointer',
             border: 'none',
             padding: '0'
         };
@@ -62,8 +47,8 @@ export default class StanButton extends React.Component<StanButtonProps, any> {
                 style={this.buttonStyle(150)}
                 className={this.buttonStyle(150)}
                 onClick={this.state.onClick}
-                onMouseEnter={this.setButtonHovered}
-                onMouseLeave={this.setButtonUnhovered}
+                onMouseEnter={this.setHovered}
+                onMouseLeave={this.setUnhovered}
             >
                 <p style={this.textStyle(12)}>{this.state.title}</p>
             </button>
