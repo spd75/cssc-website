@@ -1,28 +1,69 @@
 import React from 'react';
+import Icons from 'react-icons';
+import HoverableComponent from '../super-comps/Hoverable';
+
+const DimensionArrayInvalid = new Error(
+    'Invalid number of arguments provided for dimensions array of IconImage.'
+);
+DimensionArrayInvalid.name = 'DimensionArrayInvalid';
 
 type IconImageProps = {
-    path: string;
-    link: string;
+    icon: Icons.IconType;
+    dimensions: number[];
+    color: string;
+    hoverColor: string;
+    bgColor?: string;
 };
 
-export default class IconImage extends React.Component<IconImageProps, any> {
+export default class IconImage extends HoverableComponent<IconImageProps> {
+    defaultBgColor = 'none';
+    props: IconImageProps;
+
     constructor(props: IconImageProps) {
         super(props);
 
-        this.state = {
-            path: props.path,
-            link: props.link
-        };
+        if (props.dimensions.length !== 3) {
+            throw DimensionArrayInvalid;
+        }
+
+        this.props = props;
+
+        this.state = {};
     }
 
-    imageStyle = () => {
+    iconStyle = () => {
+        const st = this.state;
+        const props = this.props;
+        const baseStyle = {
+            width: props.dimensions[0],
+            height: props.dimensions[1],
+            padding: props.dimensions[2],
+            borderRadius: '50%',
+            cursor: !st.hovering ? 'auto' : 'pointer'
+        };
+
+        if (!props.bgColor) {
+            return {
+                ...baseStyle,
+                color: !st.hovering ? props.color : props.hoverColor
+            };
+        }
+
         return {
-            objectFit: 'contain'
+            ...baseStyle,
+            color: props.color,
+            backgroundColor: !st.hovering ? props.bgColor : props.hoverColor
         };
     };
 
     render = () => {
-        const st = this.state;
-        return <img src={st.path} />;
+        const props = this.props;
+        return (
+            <props.icon
+                style={this.iconStyle()}
+                onMouseEnter={this.setHovered}
+                onMouseLeave={this.setUnhovered}
+            />
+        );
     };
 }

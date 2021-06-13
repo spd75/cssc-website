@@ -4,10 +4,11 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 /** Components */
-import StanButton from './components/elemental/StanButton';
+import EnderBar from './components/complex/EnderBar';
 import NavItem from './components/elemental/NavItem';
 import NavLinkBar from './components/complex/NavLinkBar';
-import EnderBar from './components/complex/EnderBar';
+import NavTitleBar from './components/complex/NavTitleBar';
+import StanButton from './components/elemental/StanButton';
 
 const navFunctions = [
     () => console.log('club news!'),
@@ -39,6 +40,7 @@ ReactDOM.render(
             textPadding={25}
         />
         <EnderBar />
+        <NavTitleBar />
     </React.StrictMode>,
     document.getElementById('root')
 );

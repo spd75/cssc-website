@@ -1,33 +1,34 @@
-import React from 'react';
-import FB from '../../assets/fb_icon.png';
-import IconImage from '../elemental/IconImage';
-import Insta from '../../assets/insta_icon.png';
-import StanButton from '../elemental/StanButton';
 import { FaFacebook } from 'react-icons/fa';
-import { AiFillInstagram } from 'react-icons/ai';
+import IconImage from '../elemental/IconImage';
+import React from 'react';
+import { RiInstagramLine } from 'react-icons/ri';
+import StanButton from '../elemental/StanButton';
 
 type EnderBarProps = {};
 
 export default class EnderBar extends React.Component<EnderBarProps, any> {
+    backgroundColor: string = '#777';
+
     constructor(props: EnderBarProps) {
         super(props);
     }
 
     containerStyle = () => {
         return {
-            backgroundColor: '#777',
+            backgroundColor: this.backgroundColor,
+            width: 'max-content',
             display: 'flex',
-            alignItems: 'stretch',
+            alignItems: 'center',
             padding: '10px',
-            maxHeight: '100px'
+            columnGap: '15px'
         };
     };
 
-    iconStyle = () => {
+    iconDivStyle = () => {
         return {
-            dislay: 'block',
-            margin: '0',
-            objectFit: ''
+            display: 'flex',
+            alignItems: 'center',
+            columnGap: '8px'
         };
     };
 
@@ -45,7 +46,21 @@ export default class EnderBar extends React.Component<EnderBarProps, any> {
                     onClick={() => console.log('sup woadie')}
                 />
 
-                {/* <img style={this.iconStyle()} src={Insta} /> */}
+                <div style={this.iconDivStyle()}>
+                    <IconImage
+                        icon={RiInstagramLine}
+                        dimensions={[22, 22, 4]}
+                        color={this.backgroundColor}
+                        hoverColor={'#bbb'}
+                        bgColor={'#fff'}
+                    />
+                    <IconImage
+                        icon={FaFacebook}
+                        dimensions={[30, 30, 0]}
+                        color={'#fff'}
+                        hoverColor={'#bbb'}
+                    />
+                </div>
             </div>
         );
     };

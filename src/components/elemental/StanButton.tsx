@@ -4,9 +4,12 @@ type StanButtonProps = {
     title: string;
     traditional: boolean;
     onClick: () => void;
+    latPadding?: number;
 };
 
 export default class StanButton extends Hoverable<StanButtonProps> {
+    defaultLateralPadding = '12px';
+
     constructor(props: StanButtonProps) {
         super(props);
 
@@ -15,7 +18,8 @@ export default class StanButton extends Hoverable<StanButtonProps> {
             primColor: props.traditional ? '#48A8DE' : '#fff',
             secColor: props.traditional ? '#fff' : '#505050',
             hoverColor: props.traditional ? '#4084CB' : '#aaa',
-            onClick: props.onClick
+            onClick: props.onClick,
+            latPadding: props.latPadding || this.defaultLateralPadding
         };
     }
 
@@ -23,12 +27,10 @@ export default class StanButton extends Hoverable<StanButtonProps> {
         const st = this.state;
 
         return {
-            width: `${width}px`,
-            height: `${width * 0.2}px`,
             backgroundColor: !st.hovering ? st.primColor : st.hoverColor,
             cursor: !st.hovering ? 'auto' : 'pointer',
             border: 'none',
-            padding: '0'
+            padding: `8px ${this.defaultLateralPadding}`
         };
     };
 
