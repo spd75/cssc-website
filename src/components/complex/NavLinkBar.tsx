@@ -48,7 +48,8 @@ export default class NavLinkBar extends React.Component<NavLinkBarProps, any> {
         return {
             background: 'fff',
             display: 'flex',
-            alignItems: 'stretch'
+            alignItems: 'stretch',
+            flexGrow: 10
         };
     };
 

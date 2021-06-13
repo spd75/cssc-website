@@ -2,7 +2,7 @@ import { FaFacebook } from 'react-icons/fa';
 import IconImage from '../elemental/IconImage';
 import React from 'react';
 import { RiInstagramLine } from 'react-icons/ri';
-import StanButton from '../elemental/StanButton';
+import NavBarButton from '../elemental/NavBarButton';
 
 type EnderBarProps = {};
 
@@ -18,9 +18,11 @@ export default class EnderBar extends React.Component<EnderBarProps, any> {
             backgroundColor: this.backgroundColor,
             width: 'max-content',
             display: 'flex',
+            flexGrow: 2,
+            justifyContent: 'center',
             alignItems: 'center',
-            padding: '10px',
-            columnGap: '15px'
+            padding: '0 30px',
+            columnGap: '25px'
         };
     };
 
@@ -35,28 +37,20 @@ export default class EnderBar extends React.Component<EnderBarProps, any> {
     render = () => {
         return (
             <div style={this.containerStyle()}>
-                <StanButton
-                    title="Become a Member"
-                    traditional={false}
-                    onClick={() => console.log('sup woadie')}
-                />
-                <StanButton
-                    title="Login"
-                    traditional={false}
-                    onClick={() => console.log('sup woadie')}
-                />
+                <NavBarButton title="Become a Member" onClick={() => console.log('sup woadie')} />
+                <NavBarButton title="Login" onClick={() => console.log('sup woadie')} />
 
                 <div style={this.iconDivStyle()}>
                     <IconImage
                         icon={RiInstagramLine}
-                        dimensions={[22, 22, 4]}
+                        dimensions={[32, 32, 4]}
                         color={this.backgroundColor}
                         hoverColor={'#bbb'}
                         bgColor={'#fff'}
                     />
                     <IconImage
                         icon={FaFacebook}
-                        dimensions={[30, 30, 0]}
+                        dimensions={[40, 40, 0]}
                         color={'#fff'}
                         hoverColor={'#bbb'}
                     />

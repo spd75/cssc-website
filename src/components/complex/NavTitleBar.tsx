@@ -9,13 +9,15 @@ export default class NavTitleBar extends React.Component<any, any> {
     containerStyle = () => {
         return {
             display: 'flex',
+            justifyContent: 'center',
             alignItems: 'center',
             backgroundColor: '#48A8DE',
             fontFamily: 'Mogra',
             color: '#fff',
             fontSize: '55px',
             padding: '5px 30px',
-            width: 'max-content'
+            width: 'max-content',
+            flexGrow: 1
         };
     };
 

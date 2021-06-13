@@ -4,11 +4,8 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 /** Components */
-import EnderBar from './components/complex/EnderBar';
-import NavItem from './components/elemental/NavItem';
-import NavLinkBar from './components/complex/NavLinkBar';
-import NavTitleBar from './components/complex/NavTitleBar';
-import StanButton from './components/elemental/StanButton';
+import NavBar from './components/complex/NavBar';
+import Betski from './text';
 
 const navFunctions = [
     () => console.log('club news!'),
@@ -20,27 +17,8 @@ const navFunctions = [
 
 ReactDOM.render(
     <React.StrictMode>
-        <StanButton
-            onClick={() => {
-                console.log('it worked!');
-            }}
-            title="Hello there sir"
-            traditional={true}
-        />
-        <NavItem
-            onClick={() => {
-                console.log('It worked pt 2');
-            }}
-            text="Equipment"
-            textPadding={20}
-        />
-        <NavLinkBar
-            navLinks={['Club News', 'Trips', 'Equipment', 'About Us', 'Contact Us']}
-            onClicks={navFunctions}
-            textPadding={25}
-        />
-        <EnderBar />
-        <NavTitleBar />
+        <NavBar />
+        <Betski />
     </React.StrictMode>,
     document.getElementById('root')
 );

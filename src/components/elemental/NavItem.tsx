@@ -20,10 +20,13 @@ export default class NavItem extends Hoverable<NavItemProps> {
     outerStyle = () => {
         const st = this.state;
         return {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexGrow: 1,
             backgroundColor: !st.hovering ? '#fff' : '#48A8DE',
             opacity: '0.9',
-            width: 'max-content',
-            padding: `${st.textPadding}px`,
+            padding: `auto` /* ${st.textPadding}px */,
             cursor: !st.hovering ? 'auto' : 'pointer'
         };
     };
