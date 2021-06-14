@@ -35,9 +35,8 @@ export default class IconImage extends HoverableComponent<IconImageProps> {
         const st = this.state;
         const props = this.props;
         const baseStyle = {
-            width: props.dimensions[0],
-            height: props.dimensions[1],
-            padding: props.dimensions[2],
+            width: 'auto',
+            height: '200%',
             borderRadius: '50%',
             cursor: !st.hovering ? 'auto' : 'pointer'
         };

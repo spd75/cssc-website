@@ -1,4 +1,5 @@
 import Hoverable from '../super-comps/Hoverable';
+import ResponsiveText from './ResponsiveText';
 
 type NavItemProps = {
     text: string;
@@ -26,7 +27,7 @@ export default class NavItem extends Hoverable<NavItemProps> {
             flexGrow: 1,
             backgroundColor: !st.hovering ? '#fff' : '#48A8DE',
             opacity: '0.9',
-            padding: `auto` /* ${st.textPadding}px */,
+            padding: `auto`,
             cursor: !st.hovering ? 'auto' : 'pointer'
         };
     };
@@ -34,15 +35,14 @@ export default class NavItem extends Hoverable<NavItemProps> {
     textStyle = () => {
         const st = this.state;
         return {
-            fontFamily: 'Arvo',
-            fontSize: '19px',
-            color: !st.hovering ? '#505050' : '#fff',
-            margin: '0'
+            color: !st.hovering ? '#505050' : '#fff'
         };
     };
 
     render = () => {
         const st = this.state;
+        console.log('hi');
+        console.log(st.hovering);
 
         return (
             <div
@@ -51,7 +51,12 @@ export default class NavItem extends Hoverable<NavItemProps> {
                 onMouseEnter={this.setHovered}
                 onMouseLeave={this.setUnhovered}
             >
-                <p style={this.textStyle()}>{st.text}</p>
+                <ResponsiveText
+                    text={st.text}
+                    size={26}
+                    family="Arvo"
+                    color={!st.hovering ? '#505050' : '#fff'}
+                />
             </div>
         );
     };

@@ -1,4 +1,5 @@
 import Hoverable from '../super-comps/Hoverable';
+import ResponsiveText from './ResponsiveText';
 
 type StanButtonProps = {
     title: string;
@@ -24,20 +25,14 @@ export default class StanButton extends Hoverable<StanButtonProps> {
         const st = this.state;
 
         return {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
             backgroundColor: !st.hovering ? st.primColor : st.hoverColor,
             cursor: !st.hovering ? 'auto' : 'pointer',
             border: 'none',
             flexGrow: 2,
             height: '50%'
-        };
-    };
-
-    textStyle = (fontSize: number): object => {
-        return {
-            fontSize: `${fontSize}px`,
-            color: this.state.secColor,
-            margin: '0',
-            fontFamily: 'Arvo'
         };
     };
 
@@ -49,7 +44,7 @@ export default class StanButton extends Hoverable<StanButtonProps> {
                 onMouseEnter={this.setHovered}
                 onMouseLeave={this.setUnhovered}
             >
-                <p style={this.textStyle(18)}>{this.state.title}</p>
+                <ResponsiveText text={this.state.title} size={22} family="Arvo" color="#505050" />
             </button>
         );
     };

@@ -1,5 +1,8 @@
 import React from 'react';
-import { ReactComponent as Logo } from '../../assets/logo.svg';
+import { ReactComponent as Logo } from '../../assets/Logo.svg';
+import ResponsiveText from '../elemental/ResponsiveText';
+
+class Comp {}
 
 export default class NavTitleBar extends React.Component<any, any> {
     constructor(props: any) {
@@ -15,8 +18,7 @@ export default class NavTitleBar extends React.Component<any, any> {
             fontFamily: 'Mogra',
             color: '#fff',
             fontSize: '55px',
-            padding: '5px 30px',
-            width: 'max-content',
+            width: '10%',
             flexGrow: 1
         };
     };
@@ -30,15 +32,15 @@ export default class NavTitleBar extends React.Component<any, any> {
 
     logoStyle = () => {
         return {
-            padding: '0',
-            margin: '0'
+            width: '85%',
+            height: 'auto',
+            margin: '10% 0'
         };
     };
 
     render = () => {
         return (
             <div style={this.containerStyle()}>
-                <p style={this.textStyle()}>CSSC</p>
                 <Logo style={this.logoStyle()} />
             </div>
         );
