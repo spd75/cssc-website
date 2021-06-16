@@ -13,7 +13,6 @@ const TEXT_FONT_FAMILY = 'Arvo';
 
 type NavItemProps = {
     text: string;
-    textPadding: number;
     onClick: () => void;
 };
 

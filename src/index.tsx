@@ -4,7 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 /** Components */
-import NavBar from './components/complex/NavBar';
+import NavBar from './components/final/NavBar';
 import Betski from './text';
 
 const navFunctions = [

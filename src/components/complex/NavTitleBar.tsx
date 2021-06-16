@@ -1,6 +1,13 @@
+import * as CommonStyles from '../styles/common-styles';
 import React from 'react';
 import { ReactComponent as Logo } from '../../assets/Logo.svg';
-import ResponsiveText from '../elemental/ResponsiveText';
+
+const CONTAIN_BG_COL = '#48A8DE';
+const CONTAIN_WIDTH = '10%';
+
+const LOGO_HEIGHT = 'auto';
+const LOGO_WIDTH = '70%';
+const LOGO_MARGIN = '9% 0';
 
 export default class NavTitleBar extends React.Component<any, any> {
     constructor(props: any) {
@@ -9,30 +16,17 @@ export default class NavTitleBar extends React.Component<any, any> {
 
     containerStyle = () => {
         return {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: '#48A8DE',
-            fontFamily: 'Mogra',
-            color: '#fff',
-            fontSize: '55px',
-            width: '10%',
+            ...CommonStyles.FlexCC,
+            backgroundColor: CONTAIN_BG_COL,
+            width: CONTAIN_WIDTH,
             flexGrow: 1
-        };
-    };
-
-    textStyle = () => {
-        return {
-            padding: '12px 0 0 0',
-            margin: '0'
         };
     };
 
     logoStyle = () => {
         return {
-            width: '70%',
-            height: 'auto',
-            margin: '9% 0'
+            ...CommonStyles.HeightWidth(LOGO_HEIGHT, LOGO_WIDTH),
+            margin: LOGO_MARGIN
         };
     };
 

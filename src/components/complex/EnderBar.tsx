@@ -1,51 +1,53 @@
-import { FaFacebook } from 'react-icons/fa';
+import * as CommonStyles from '../styles/common-styles';
 import IconImage from '../elemental/IconImage';
-import React from 'react';
-import { RiInstagramLine } from 'react-icons/ri';
 import NavBarButton from '../elemental/NavBarButton';
-import { ReactComponent as Insta } from '../../assets/insta.svg';
+import React from 'react';
 
-type EnderBarProps = {};
+// Icons
+import { FaFacebook } from 'react-icons/fa';
+import { RiInstagramLine } from 'react-icons/ri';
 
-export default class EnderBar extends React.Component<EnderBarProps, any> {
-    backgroundColor: string = '#777';
+const BAR_COL = '#777';
+const BAR_WIDTH = '25%';
 
-    constructor(props: EnderBarProps) {
+const INNER_HEIGHT = '100%';
+const INNER_WIDTH = 'max-content';
+const INNER_MARGIN = '0% 4%';
+const INNGER_COL_GAP = '3%';
+
+const ICON_DIV_HEIGHT = '100%';
+const ICON_DIV_WIDTH = 'max-content';
+const ICON_COL_GAP = '8%';
+
+export default class EnderBar extends React.Component<any, any> {
+    constructor(props: any) {
         super(props);
     }
 
     containerStyle = () => {
         return {
-            backgroundColor: this.backgroundColor,
-            display: 'flex',
-            flexGrow: 2,
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '20%'
+            ...CommonStyles.FlexCC,
+            backgroundColor: BAR_COL,
+            width: BAR_WIDTH,
+            flexGrow: 2
         };
     };
 
     innerContainerStyle = () => {
         return {
-            margin: '0% 4%',
-            backgroundColor: this.backgroundColor,
-            height: '100%',
-            width: 'max-content',
-            display: 'flex',
+            ...CommonStyles.FlexCC,
+            ...CommonStyles.HeightWidth(INNER_HEIGHT, INNER_WIDTH),
+            margin: INNER_MARGIN,
             flexGrow: 2,
-            justifyContent: 'center',
-            alignItems: 'center',
-            columnGap: '3%'
+            columnGap: INNGER_COL_GAP
         };
     };
 
     iconDivStyle = () => {
         return {
-            display: 'flex',
-            alignItems: 'center',
-            height: '100%',
-            width: 'max-content',
-            columnGap: '4%'
+            ...CommonStyles.FlexCC,
+            ...CommonStyles.HeightWidth(ICON_DIV_HEIGHT, ICON_DIV_WIDTH),
+            columnGap: ICON_COL_GAP
         };
     };
 
@@ -62,7 +64,7 @@ export default class EnderBar extends React.Component<EnderBarProps, any> {
                     <div style={this.iconDivStyle()}>
                         <IconImage
                             icon={RiInstagramLine}
-                            color={this.backgroundColor}
+                            color={BAR_COL}
                             hoverColor={'#bbb'}
                             bgColor={'#fff'}
                             margin="10%"
