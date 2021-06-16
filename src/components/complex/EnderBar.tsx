@@ -3,6 +3,7 @@ import IconImage from '../elemental/IconImage';
 import React from 'react';
 import { RiInstagramLine } from 'react-icons/ri';
 import NavBarButton from '../elemental/NavBarButton';
+import { ReactComponent as Insta } from '../../assets/insta.svg';
 
 type EnderBarProps = {};
 
@@ -19,19 +20,22 @@ export default class EnderBar extends React.Component<EnderBarProps, any> {
             display: 'flex',
             flexGrow: 2,
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            width: '20%'
         };
     };
 
     innerContainerStyle = () => {
         return {
-            margin: '5% 5%',
+            margin: '0% 4%',
             backgroundColor: this.backgroundColor,
+            height: '100%',
             width: 'max-content',
             display: 'flex',
             flexGrow: 2,
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            columnGap: '3%'
         };
     };
 
@@ -40,7 +44,8 @@ export default class EnderBar extends React.Component<EnderBarProps, any> {
             display: 'flex',
             alignItems: 'center',
             height: '100%',
-            columnGap: '8px'
+            width: 'max-content',
+            columnGap: '4%'
         };
     };
 
@@ -57,17 +62,12 @@ export default class EnderBar extends React.Component<EnderBarProps, any> {
                     <div style={this.iconDivStyle()}>
                         <IconImage
                             icon={RiInstagramLine}
-                            dimensions={[32, 32, 4]}
                             color={this.backgroundColor}
                             hoverColor={'#bbb'}
                             bgColor={'#fff'}
+                            margin="10%"
                         />
-                        <IconImage
-                            icon={FaFacebook}
-                            dimensions={[40, 40, 0]}
-                            color={'#fff'}
-                            hoverColor={'#bbb'}
-                        />
+                        <IconImage icon={FaFacebook} color={'#fff'} hoverColor={'#bbb'} />
                     </div>
                 </div>
             </div>

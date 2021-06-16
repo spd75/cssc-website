@@ -9,10 +9,10 @@ DimensionArrayInvalid.name = 'DimensionArrayInvalid';
 
 type IconImageProps = {
     icon: Icons.IconType;
-    dimensions: number[];
     color: string;
     hoverColor: string;
     bgColor?: string;
+    margin?: string;
 };
 
 export default class IconImage extends HoverableComponent<IconImageProps> {
@@ -21,24 +21,46 @@ export default class IconImage extends HoverableComponent<IconImageProps> {
 
     constructor(props: IconImageProps) {
         super(props);
-
-        if (props.dimensions.length !== 3) {
-            throw DimensionArrayInvalid;
-        }
-
         this.props = props;
 
         this.state = {};
     }
 
-    iconStyle = () => {
+    containerStyle = () => {
         const st = this.state;
         const props = this.props;
         const baseStyle = {
+            display: 'flex',
+            alignItems: 'center',
+            height: '50%',
             width: 'auto',
-            height: '200%',
             borderRadius: '50%',
             cursor: !st.hovering ? 'auto' : 'pointer'
+        };
+
+        if (!props.bgColor) {
+            return {
+                ...baseStyle,
+                color: !st.hovering ? props.color : props.hoverColor
+            };
+        }
+
+        return {
+            ...baseStyle,
+            color: props.color,
+            backgroundColor: !st.hovering ? props.bgColor : props.hoverColor
+        };
+    };
+
+    iconStyle = () => {
+        const st = this.state;
+        const props = this.props;
+        var baseStyle = {
+            height: '100%',
+            width: 'auto',
+            borderRadius: '50%',
+            cursor: !st.hovering ? 'auto' : 'pointer',
+            margin: this.props.margin || 'auto'
         };
 
         if (!props.bgColor) {
@@ -58,11 +80,13 @@ export default class IconImage extends HoverableComponent<IconImageProps> {
     render = () => {
         const props = this.props;
         return (
-            <props.icon
-                style={this.iconStyle()}
-                onMouseEnter={this.setHovered}
-                onMouseLeave={this.setUnhovered}
-            />
+            <div style={this.containerStyle()}>
+                <props.icon
+                    style={this.iconStyle()}
+                    onMouseEnter={this.setHovered}
+                    onMouseLeave={this.setUnhovered}
+                />
+            </div>
         );
     };
 }

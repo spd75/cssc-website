@@ -2,8 +2,6 @@ import React from 'react';
 import { ReactComponent as Logo } from '../../assets/Logo.svg';
 import ResponsiveText from '../elemental/ResponsiveText';
 
-class Comp {}
-
 export default class NavTitleBar extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
@@ -32,9 +30,9 @@ export default class NavTitleBar extends React.Component<any, any> {
 
     logoStyle = () => {
         return {
-            width: '85%',
+            width: '70%',
             height: 'auto',
-            margin: '10% 0'
+            margin: '9% 0'
         };
     };
 

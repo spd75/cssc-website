@@ -53,7 +53,7 @@ export default class NavItem extends Hoverable<NavItemProps> {
             >
                 <ResponsiveText
                     text={st.text}
-                    size={26}
+                    size={28}
                     family="Arvo"
                     color={!st.hovering ? '#505050' : '#fff'}
                 />
