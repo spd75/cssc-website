@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
+const INIT_WINDOW_WIDTH = 0;
+const TEXT_PADD = '12px 0';
+const TEXT_MARGIN = '0';
+
 type ResponsiveTextProps = {
     text: string;
     size: number;
@@ -7,25 +11,14 @@ type ResponsiveTextProps = {
     color: string;
 };
 
-export default class ResponsiveText extends React.Component<any, any> {
-    size: number;
-    family: string;
-    color: string;
+export default class ResponsiveText extends React.Component<ResponsiveTextProps, any> {
+    props: ResponsiveTextProps;
 
-    constructor(props: any) {
+    constructor(props: ResponsiveTextProps) {
         super(props);
 
-        this.size = props.size;
-        this.family = props.family;
-        this.color = props.color;
-
-        this.style = this.style.bind(this);
-
-        this.state = {
-            winWidth: 0,
-            text: props.text,
-            hover: props.hover
-        };
+        this.props = props;
+        this.state = { winWidth: INIT_WINDOW_WIDTH };
     }
 
     componentDidMount = () => {
@@ -33,33 +26,33 @@ export default class ResponsiveText extends React.Component<any, any> {
         window.addEventListener('resize', this.updateWindowDimensions);
     };
 
-    componentWillUnmount = () => {
-        window.removeEventListener('resize', this.updateWindowDimensions);
-    };
+    componentWillUnmount = () => window.removeEventListener('resize', this.updateWindowDimensions);
 
     updateWindowDimensions = () => {
         this.setState({ winWidth: window.innerWidth });
         console.log(this.state.winWidth);
     };
 
-    componentWillReceiveProps = (props: any) => {
-        this.color = props.color;
+    componentWillReceiveProps = (props: ResponsiveTextProps) => {
+        this.props = {
+            ...this.props,
+            color: props.color
+        };
     };
 
     style = () => {
         const st = this.state;
-        console.log(this.size);
+
         return {
-            color: this.color,
-            fontFamily: this.family,
-            padding: '12px 0',
-            fontSize: `${this.size * st.winWidth * 0.0004}px`,
-            margin: '0'
+            fontFamily: this.props.family,
+            fontSize: `${this.props.size * st.winWidth * 0.0004}px`,
+            color: this.props.color,
+            padding: TEXT_PADD,
+            margin: TEXT_MARGIN
         };
     };
 
-    render = () => {
-        console.log('rebuilt');
-        return <p style={this.style()}>{this.state.text}</p>;
-    };
+    render() {
+        return <p style={this.style()}>{this.props.text}</p>;
+    }
 }

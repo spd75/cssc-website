@@ -5,19 +5,22 @@ export default class HoverableComponent<T1> extends React.Component<T1, any> {
         super(props);
 
         this.setState({
-            hovering: false
+            hovering: false,
+            cursor: 'auto'
         });
     }
 
     setHovered = () => {
         this.setState({
-            hovering: true
+            hovering: true,
+            cursor: 'pointer'
         });
     };
 
     setUnhovered = () => {
         this.setState({
-            hovering: false
+            hovering: false,
+            cursor: 'auto'
         });
     };
 }

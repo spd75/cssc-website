@@ -1,6 +1,14 @@
-import React from 'react';
+import * as CommonStyles from '../styles/common-styles';
 import Icons from 'react-icons';
 import HoverableComponent from '../super-comps/Hoverable';
+
+const BORDER_RADIUS = '50%';
+
+const CONTAIN_HEIGHT = '50%';
+const CONTAIN_WIDTH = 'auto';
+
+const ICON_HEIGHT = '100%';
+const ICON_WIDTH = 'auto';
 
 const DimensionArrayInvalid = new Error(
     'Invalid number of arguments provided for dimensions array of IconImage.'
@@ -22,46 +30,37 @@ export default class IconImage extends HoverableComponent<IconImageProps> {
     constructor(props: IconImageProps) {
         super(props);
         this.props = props;
-
         this.state = {};
     }
 
     containerStyle = () => {
         const st = this.state;
-        const props = this.props;
+
         const baseStyle = {
-            display: 'flex',
-            alignItems: 'center',
-            height: '50%',
-            width: 'auto',
-            borderRadius: '50%',
-            cursor: !st.hovering ? 'auto' : 'pointer'
+            ...CommonStyles.FlexCC,
+            ...CommonStyles.HeightWidth(CONTAIN_HEIGHT, CONTAIN_WIDTH),
+            borderRadius: BORDER_RADIUS,
+            cursor: st.cursor
         };
-
-        if (!props.bgColor) {
-            return {
-                ...baseStyle,
-                color: !st.hovering ? props.color : props.hoverColor
-            };
-        }
-
-        return {
-            ...baseStyle,
-            color: props.color,
-            backgroundColor: !st.hovering ? props.bgColor : props.hoverColor
-        };
+        return this.styleWithColors(baseStyle);
     };
 
     iconStyle = () => {
         const st = this.state;
         const props = this.props;
+
         var baseStyle = {
-            height: '100%',
-            width: 'auto',
-            borderRadius: '50%',
-            cursor: !st.hovering ? 'auto' : 'pointer',
-            margin: this.props.margin || 'auto'
+            ...CommonStyles.HeightWidth(ICON_HEIGHT, ICON_WIDTH),
+            borderRadius: BORDER_RADIUS,
+            cursor: st.cursor,
+            margin: props.margin || 'auto'
         };
+        return this.styleWithColors(baseStyle);
+    };
+
+    styleWithColors = (baseStyle: object) => {
+        const st = this.state;
+        const props = this.props;
 
         if (!props.bgColor) {
             return {

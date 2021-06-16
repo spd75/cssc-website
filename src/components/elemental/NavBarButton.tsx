@@ -1,5 +1,14 @@
+import * as CommonStyles from '../styles/common-styles';
 import Hoverable from '../super-comps/Hoverable';
 import ResponsiveText from './ResponsiveText';
+
+const BUTTON_PRIMARY_COL = '#fff';
+const BUTTON_SECOND_COL = '#505050';
+const BUTTON_HOVER_COL = '#aaa';
+const BUTTON_HEIGHT = '50%';
+
+const TEXT_SIZE = 22;
+const TEXT_FONT_FAMILY = 'Arvo';
 
 type StanButtonProps = {
     title: string;
@@ -8,43 +17,42 @@ type StanButtonProps = {
 
 export default class StanButton extends Hoverable<StanButtonProps> {
     defaultLateralPadding = '12px';
+    props: StanButtonProps;
 
     constructor(props: StanButtonProps) {
         super(props);
 
-        this.state = {
-            title: props.title,
-            primColor: '#fff',
-            secColor: '#505050',
-            hoverColor: '#aaa',
-            onClick: props.onClick
-        };
+        this.props = props;
+        this.state = {};
     }
 
-    buttonStyle = (width: number): any => {
+    buttonStyle = () => {
         const st = this.state;
 
         return {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: !st.hovering ? st.primColor : st.hoverColor,
-            cursor: !st.hovering ? 'auto' : 'pointer',
+            ...CommonStyles.FlexCC,
+            backgroundColor: !st.hovering ? BUTTON_PRIMARY_COL : BUTTON_HOVER_COL,
+            height: BUTTON_HEIGHT,
+            cursor: st.cursor,
             border: 'none',
-            flexGrow: 2,
-            height: '50%'
+            flexGrow: 2
         };
     };
 
     render = () => {
         return (
             <button
-                style={this.buttonStyle(150)}
-                onClick={this.state.onClick}
+                style={this.buttonStyle()}
+                onClick={this.props.onClick}
                 onMouseEnter={this.setHovered}
                 onMouseLeave={this.setUnhovered}
             >
-                <ResponsiveText text={this.state.title} size={22} family="Arvo" color="#505050" />
+                <ResponsiveText
+                    text={this.props.title}
+                    size={TEXT_SIZE}
+                    family={TEXT_FONT_FAMILY}
+                    color={BUTTON_SECOND_COL}
+                />
             </button>
         );
     };
