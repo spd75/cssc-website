@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import Hero1 from './assets/hero1.jpg';
 
 /** Components */
-import NavBar from './components/final/NavBar';
+import Header from './components/final/Header';
 import Betski from './text';
 
 const navFunctions = [
@@ -17,7 +18,7 @@ const navFunctions = [
 
 ReactDOM.render(
     <React.StrictMode>
-        <NavBar />
+        <Header path={Hero1} />
         <Betski />
     </React.StrictMode>,
     document.getElementById('root')

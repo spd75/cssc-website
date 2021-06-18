@@ -4,26 +4,30 @@ import NavTitleBar from '../complex/NavTitleBar';
 import React from 'react';
 
 // CURRENT VALUES ADDED TO NAVBAR
-const NAV_LINKS = ['Club News', 'Trips', 'Equipment', 'About Us', 'Contact Us'];
-const ON_CLICKS = [
-    () => console.log('Club news'),
-    () => console.log('Trips'),
-    () => console.log('Equipment'),
-    () => console.log('About Us'),
-    () => console.log('Contact Us')
-];
-
 const NAVBAR_WIDTH = '100%';
+const NAVBAR_TOP = '0';
+const NAVBAR_SHADOW = '0 2px 3px #C8C8C8';
 
-export default class NavBar extends React.Component<any, any> {
-    constructor(props: any) {
+type NavBarProps = {
+    navLinks: string[];
+    onClicks: (() => void)[];
+};
+
+export default class NavBar extends React.Component<NavBarProps, any> {
+    props: NavBarProps;
+
+    constructor(props: NavBarProps) {
         super(props);
+        this.props = props;
     }
 
     containerStyle = () => {
         return {
             display: 'flex',
-            width: NAVBAR_WIDTH
+            width: NAVBAR_WIDTH,
+            position: 'fixed' as 'fixed',
+            top: NAVBAR_TOP,
+            boxShadow: NAVBAR_SHADOW
         };
     };
 
@@ -31,7 +35,7 @@ export default class NavBar extends React.Component<any, any> {
         return (
             <div style={this.containerStyle()}>
                 <NavTitleBar />
-                <NavLinkBar navLinks={NAV_LINKS} onClicks={ON_CLICKS} textPadding={30} />
+                <NavLinkBar navLinks={this.props.navLinks} onClicks={this.props.onClicks} />
                 <EnderBar />
             </div>
         );

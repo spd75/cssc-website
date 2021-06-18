@@ -2,6 +2,8 @@ import NavItem from '../elemental/NavItem';
 import React from 'react';
 import Separator from '../elemental/Separator';
 
+const BAR_PRIM_COL = 'rgba(255, 255, 255, 0.90)';
+
 const SEPARATOR_OFFSET = 10;
 
 const InvalidProps = Error('Number of navlinks and oncliks are not the same');
@@ -10,7 +12,6 @@ InvalidProps.name = 'InvalidProps';
 type NavLinkBarProps = {
     navLinks: string[];
     onClicks: (() => void)[];
-    textPadding: number;
 };
 
 export default class NavLinkBar extends React.Component<NavLinkBarProps, any> {
@@ -43,6 +44,7 @@ export default class NavLinkBar extends React.Component<NavLinkBarProps, any> {
         return {
             display: 'flex',
             alignItems: 'stretch',
+            backgroundColor: BAR_PRIM_COL,
             flexGrow: 10
         };
     };

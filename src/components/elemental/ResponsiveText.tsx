@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import Responsive from '../super-comps/Responsive';
 
-const INIT_WINDOW_WIDTH = 0;
 const TEXT_PADD = '12px 0';
 const TEXT_MARGIN = '0';
 
@@ -11,27 +10,13 @@ type ResponsiveTextProps = {
     color: string;
 };
 
-export default class ResponsiveText extends React.Component<ResponsiveTextProps, any> {
+export default class ResponsiveText extends Responsive<ResponsiveTextProps> {
     props: ResponsiveTextProps;
 
     constructor(props: ResponsiveTextProps) {
         super(props);
-
         this.props = props;
-        this.state = { winWidth: INIT_WINDOW_WIDTH };
     }
-
-    componentDidMount = () => {
-        this.updateWindowDimensions();
-        window.addEventListener('resize', this.updateWindowDimensions);
-    };
-
-    componentWillUnmount = () => window.removeEventListener('resize', this.updateWindowDimensions);
-
-    updateWindowDimensions = () => {
-        this.setState({ winWidth: window.innerWidth });
-        console.log(this.state.winWidth);
-    };
 
     componentWillReceiveProps = (props: ResponsiveTextProps) => {
         this.props = {

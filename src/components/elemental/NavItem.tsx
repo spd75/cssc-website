@@ -2,9 +2,8 @@ import * as CommonStyles from '../styles/common-styles';
 import Hoverable from '../super-comps/Hoverable';
 import ResponsiveText from './ResponsiveText';
 
-const ITEM_PRIM_COL = '#fff';
-const ITEM_HOVER_COL = '#48A8DE';
-const ITEM_OPACITY = '0.9';
+const ITEM_PRIM_COL = 'rgba(0, 0, 0, 0.0)';
+const ITEM_HOVER_COL = 'rgba(72, 168, 222, 1.0)';
 
 const TEXT_PRIM_COL = '#505050';
 const TEXT_HOVER_COL = '#fff';
@@ -30,7 +29,6 @@ export default class NavItem extends Hoverable<NavItemProps> {
         return {
             ...CommonStyles.FlexCC,
             backgroundColor: !st.hovering ? ITEM_PRIM_COL : ITEM_HOVER_COL,
-            opacity: ITEM_OPACITY,
             cursor: st.cursor,
             flexGrow: 1
         };
