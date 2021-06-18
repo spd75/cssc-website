@@ -3,10 +3,11 @@ import Hoverable from '../super-comps/Hoverable';
 import ResponsiveText from './ResponsiveText';
 
 const BUTTON_PRIMARY_COL = '#fff';
-const BUTTON_SECOND_COL = '#505050';
 const BUTTON_HOVER_COL = '#aaa';
 const BUTTON_HEIGHT = '50%';
 
+const TEXT_PRIM_COL = '#505050';
+const TEXT_HOVER_COL = '#000';
 const TEXT_SIZE = 22;
 const TEXT_FONT_FAMILY = 'Arvo';
 
@@ -40,6 +41,8 @@ export default class StanButton extends Hoverable<StanButtonProps> {
     };
 
     render = () => {
+        const st = this.state;
+
         return (
             <button
                 style={this.buttonStyle()}
@@ -51,7 +54,7 @@ export default class StanButton extends Hoverable<StanButtonProps> {
                     text={this.props.title}
                     size={TEXT_SIZE}
                     family={TEXT_FONT_FAMILY}
-                    color={BUTTON_SECOND_COL}
+                    color={!st.hovering ? TEXT_PRIM_COL : TEXT_HOVER_COL}
                 />
             </button>
         );
