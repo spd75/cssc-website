@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Hero1 from './assets/hero1.jpg';
+import Hero2 from './assets/hero2.jpg';
+import Hero3 from './assets/hero3.jpg';
 
 /** Components */
 import Header from './components/final/Header';
@@ -18,7 +20,7 @@ const navFunctions = [
 
 ReactDOM.render(
     <React.StrictMode>
-        <Header path={Hero1} />
+        <Header path={[Hero1, Hero2, Hero3]} />
         <Betski />
     </React.StrictMode>,
     document.getElementById('root')

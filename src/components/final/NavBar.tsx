@@ -6,7 +6,7 @@ import React from 'react';
 // CURRENT VALUES ADDED TO NAVBAR
 const NAVBAR_WIDTH = '100%';
 const NAVBAR_TOP = '0';
-const NAVBAR_SHADOW = '0 2px 3px #C8C8C8';
+const NAVBAR_SHADOW = '0 1px 1px #666';
 
 type NavBarProps = {
     navLinks: string[];

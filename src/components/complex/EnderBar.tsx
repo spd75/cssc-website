@@ -7,7 +7,7 @@ import React from 'react';
 import { FaFacebook } from 'react-icons/fa';
 import { RiInstagramLine } from 'react-icons/ri';
 
-const BAR_COL = '#777';
+const BAR_COL = '#636363';
 const BAR_WIDTH = '25%';
 
 const INNER_HEIGHT = '100%';

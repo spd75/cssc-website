@@ -5,7 +5,9 @@ const INIT_WINDOW_WIDTH = 0;
 export default class Responsive<T> extends React.Component<T, any> {
     constructor(props: T) {
         super(props);
-        this.state = { winWidth: INIT_WINDOW_WIDTH };
+        this.state = {
+            winWidth: INIT_WINDOW_WIDTH
+        };
     }
 
     componentDidMount = () => {
