@@ -1,5 +1,6 @@
 import Responsive from '../super-comps/Responsive';
 import NavBar from './NavBar';
+import SlideshowIndicator from '../elemental/SlideshowIndicator';
 
 const IMG_RATIO = 0.5;
 
@@ -45,14 +46,17 @@ export default class HeroHeader extends Responsive<HeroImageProps> {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             width: `${st.winWidth}px`,
-            height: `${st.winWidth * IMG_RATIO}px`
+            paddingTop: `${st.winWidth * IMG_RATIO * 0.975}px`,
+            paddingBottom: `${st.winWidth * IMG_RATIO * 0.025}px`
         };
     };
 
     render = () => {
+        const st = this.state;
         return (
             <div style={this.imgStyle()}>
                 <NavBar navLinks={NAV_LINKS} onClicks={ON_CLICKS} />
+                <SlideshowIndicator totalNum={this.props.path.length} pointer={st.pointer} />
             </div>
         );
     };

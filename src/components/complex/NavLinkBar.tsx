@@ -2,7 +2,7 @@ import NavItem from '../elemental/NavItem';
 import React from 'react';
 import Separator from '../elemental/Separator';
 
-const BAR_PRIM_COL = 'rgba(255, 255, 255, 0.90)';
+const BAR_PRIM_COL = 'rgba(255, 255, 255, 0.9)';
 
 const SEPARATOR_OFFSET = 10;
 
