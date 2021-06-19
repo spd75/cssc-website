@@ -1,6 +1,16 @@
+import * as CommonStyles from '../styles/common-styles';
 import EventBanner, { EventBannerProps } from '../final/EventBanner';
 import React from 'react';
 import ResponsiveText from '../elemental/ResponsiveText';
+
+const OUTER_CONTAIN_WIDTH = '100%';
+const OUTER_CONTAIN_PADD = '3% 0';
+
+const INNER_CONTAIN_WIDTH = '100%';
+const INNER_CONTAIN_COL_GAP = '5%';
+
+const HEADER_SIZE = 52;
+const HEADER_PADD = '0 0 3% 0';
 
 type EventData = {
     text: string;
@@ -40,29 +50,22 @@ export default class EventSection extends React.Component<EventSectionProps> {
         return events;
     };
 
-    containerStyle = () => ({
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column' as 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        rowGap: '5%',
-        textAlign: 'center' as 'center',
-        padding: '3% 0'
+    outerContainerStyle = () => ({
+        ...CommonStyles.FlexCenterColText,
+        width: OUTER_CONTAIN_WIDTH,
+        padding: OUTER_CONTAIN_PADD
     });
 
     eventsContainerStyle = () => ({
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'stretch',
-        columnGap: '5%'
+        ...CommonStyles.FlexCS,
+        width: INNER_CONTAIN_WIDTH,
+        columnGap: INNER_CONTAIN_COL_GAP
     });
 
     render = () => {
         return (
-            <div style={this.containerStyle()}>
-                <ResponsiveText size={44} padding="0 0 3% 0">
+            <div style={this.outerContainerStyle()}>
+                <ResponsiveText size={HEADER_SIZE} padding={HEADER_PADD}>
                     Upcoming Trips and Events
                 </ResponsiveText>
                 <div style={this.eventsContainerStyle()}>{this.renderNavLinks()}</div>

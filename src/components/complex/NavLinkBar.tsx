@@ -1,8 +1,10 @@
+import * as CommonStyles from '../styles/common-styles';
 import NavItem from '../elemental/NavItem';
 import React from 'react';
 import Separator from '../elemental/Separator';
 
-const BAR_PRIM_COL = 'rgba(255, 255, 255, 0.9)';
+const CONTAIN_PRIM_COL = 'rgba(255, 255, 255, 0.9)';
+const CONTAIN_FLEX_GROW = 10;
 
 const SEPARATOR_OFFSET_PERCENT = 1.5;
 
@@ -42,10 +44,9 @@ export default class NavLinkBar extends React.Component<NavLinkBarProps, any> {
 
     containerStyle = () => {
         return {
-            display: 'flex',
-            alignItems: 'stretch',
-            backgroundColor: BAR_PRIM_COL,
-            flexGrow: 10
+            ...CommonStyles.FlexCS,
+            backgroundColor: CONTAIN_PRIM_COL,
+            flexGrow: CONTAIN_FLEX_GROW
         };
     };
 

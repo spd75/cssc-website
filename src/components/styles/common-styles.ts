@@ -4,6 +4,12 @@ export const FlexCC = {
     justifyContent: 'center'
 };
 
+export const FlexCS = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+};
+
 export const FlexCenterColText = {
     ...FlexCC,
     flexDirection: 'column' as 'column',

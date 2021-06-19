@@ -2,6 +2,9 @@ import React from 'react';
 import EventHeader from '../elemental/EventHeader';
 import EventText from '../elemental/EventText';
 
+const CONTAIN_WIDTH = '18%';
+const CONTAIN_BOX_SHADOW = '1px 1px 5px #CCC';
+
 export type EventBannerProps = {
     children: string;
     title: string;
@@ -19,8 +22,8 @@ export default class EventBanner extends React.Component<EventBannerProps, any> 
     }
 
     containerStyle = () => ({
-        width: '18%',
-        boxShadow: '1px 1px 5px #CCC'
+        width: CONTAIN_WIDTH,
+        boxShadow: CONTAIN_BOX_SHADOW
     });
 
     render = () => {
