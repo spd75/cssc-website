@@ -12,7 +12,7 @@ import Hero4 from './assets/hero4.jpg';
 import Dummy from './assets/dummy.png';
 
 /** Components */
-import EventBanner from './components/final/EventBanner';
+import Events from './components/sections/Events';
 import Header from './components/sections/Header';
 import Betski from './text';
 
@@ -25,15 +25,40 @@ const navFunctions = [
 ];
 
 const text =
-    'Every year we dedicate a week in September to our JOs.  JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.';
+    'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.';
+
+const eventData = [
+    {
+        title: 'Start of JO week',
+        month: 'June',
+        day: '10',
+        imgPath: Dummy,
+        text:
+            'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
+    },
+    {
+        title: 'Start of JO week',
+        month: 'June',
+        day: '10',
+        imgPath: Dummy,
+        text:
+            'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
+    },
+    {
+        title: 'Start of JO week',
+        month: 'June',
+        day: '10',
+        imgPath: Dummy,
+        text:
+            'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
+    }
+];
 
 ReactDOM.render(
     <React.StrictMode>
         <Header path={[Hero1, Hero2, Hero3, Hero4]} />
         <Betski />
-        <EventBanner title="Start of JO Week" month="June" day="10" imgPath={Dummy}>
-            {text}
-        </EventBanner>
+        <Events>{eventData}</Events>
     </React.StrictMode>,
     document.getElementById('root')
 );

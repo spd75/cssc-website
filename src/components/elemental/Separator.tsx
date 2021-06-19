@@ -19,7 +19,7 @@ export default class Separator extends React.Component<SeparatorProps, any> {
     separatorStyle = () => ({
         width: SEPARATOR_WIDTH,
         backgroundColor: SEPARATOR_COLOR,
-        margin: `${this.props.offset}px 0`,
+        margin: `${this.props.offset}% 0`,
         opacity: SEPARATOR_OPACITY
     });
 

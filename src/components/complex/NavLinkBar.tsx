@@ -4,7 +4,7 @@ import Separator from '../elemental/Separator';
 
 const BAR_PRIM_COL = 'rgba(255, 255, 255, 0.9)';
 
-const SEPARATOR_OFFSET = 10;
+const SEPARATOR_OFFSET_PERCENT = 1.5;
 
 const InvalidProps = Error('Number of navlinks and oncliks are not the same');
 InvalidProps.name = 'InvalidProps';
@@ -34,7 +34,7 @@ export default class NavLinkBar extends React.Component<NavLinkBarProps, any> {
         for (var i = 0; i < props.children.length; i++) {
             navLinks.push(<NavItem onClick={props.onClicks[i]}>{props.children[i]}</NavItem>);
             if (i !== props.children.length - 1) {
-                navLinks.push(<Separator offset={SEPARATOR_OFFSET} />);
+                navLinks.push(<Separator offset={SEPARATOR_OFFSET_PERCENT} />);
             }
         }
         return navLinks;

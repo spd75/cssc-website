@@ -2,7 +2,7 @@ import React from 'react';
 import EventHeader from '../elemental/EventHeader';
 import EventText from '../elemental/EventText';
 
-type EventBannerProps = {
+export type EventBannerProps = {
     children: string;
     title: string;
     month: string;
