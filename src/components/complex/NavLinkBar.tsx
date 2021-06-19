@@ -32,7 +32,7 @@ export default class NavLinkBar extends React.Component<NavLinkBarProps, any> {
         const props = this.props;
         var navLinks = [];
         for (var i = 0; i < props.navLinks.length; i++) {
-            navLinks.push(<NavItem text={props.navLinks[i]} onClick={props.onClicks[i]} />);
+            navLinks.push(<NavItem onClick={props.onClicks[i]}>{props.navLinks[i]}</NavItem>);
             if (i !== props.navLinks.length - 1) {
                 navLinks.push(<Separator offset={SEPARATOR_OFFSET} />);
             }

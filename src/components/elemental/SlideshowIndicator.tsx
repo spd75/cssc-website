@@ -38,7 +38,7 @@ export default class SlideshowIndicator extends React.Component<SlideShowIndicat
         margin: '0 10px',
         backgroundColor: !isCurrent ? '#fff' : '#48A8DE',
         borderRadius: '50%',
-        boxShadow: '2px 2px 4px #666'
+        boxShadow: '1px 1px 4px #000'
     });
 
     renderIndicators = () => {

@@ -8,10 +8,9 @@ const ITEM_HOVER_COL = 'rgba(72, 168, 222, 1.0)';
 const TEXT_PRIM_COL = '#505050';
 const TEXT_HOVER_COL = '#fff';
 const TEXT_SIZE = 28;
-const TEXT_FONT_FAMILY = 'Arvo';
 
 type NavItemProps = {
-    text: string;
+    children: string;
     onClick: () => void;
 };
 
@@ -36,6 +35,8 @@ export default class NavItem extends Hoverable<NavItemProps> {
 
     render = () => {
         const st = this.state;
+        const color = !st.hovering ? TEXT_PRIM_COL : TEXT_HOVER_COL;
+
         return (
             <div
                 style={this.outerStyle()}
@@ -43,12 +44,9 @@ export default class NavItem extends Hoverable<NavItemProps> {
                 onMouseEnter={this.setHovered}
                 onMouseLeave={this.setUnhovered}
             >
-                <ResponsiveText
-                    text={this.props.text}
-                    size={TEXT_SIZE}
-                    family={TEXT_FONT_FAMILY}
-                    color={!st.hovering ? TEXT_PRIM_COL : TEXT_HOVER_COL}
-                />
+                <ResponsiveText size={TEXT_SIZE} color={color}>
+                    {this.props.children}
+                </ResponsiveText>
             </div>
         );
     };

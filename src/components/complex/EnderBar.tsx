@@ -55,11 +55,8 @@ export default class EnderBar extends React.Component<any, any> {
         return (
             <div style={this.containerStyle()}>
                 <div style={this.innerContainerStyle()}>
-                    <NavBarButton
-                        title="Become a Member"
-                        onClick={() => console.log('sup woadie')}
-                    />
-                    <NavBarButton title="Login" onClick={() => console.log('sup woadie')} />
+                    <NavBarButton onClick={() => console.log('a')}>Become a Member</NavBarButton>
+                    <NavBarButton onClick={() => console.log('b')}>Login</NavBarButton>
 
                     <div style={this.iconDivStyle()}>
                         <IconImage

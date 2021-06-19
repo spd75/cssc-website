@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import SlideShowIndicator from './components/elemental/SlideshowIndicator';
 
 /** Hero Images */
 import Hero1 from './assets/hero1.jpg';
@@ -11,7 +10,7 @@ import Hero3 from './assets/hero3.jpg';
 import Hero4 from './assets/hero4.jpg';
 
 /** Components */
-import Header from './components/final/Header';
+import Header from './components/sections/Header';
 import Betski from './text';
 
 const navFunctions = [

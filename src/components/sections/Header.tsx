@@ -1,5 +1,5 @@
-import Responsive from '../super-comps/Responsive';
-import NavBar from './NavBar';
+import React from 'react';
+import NavBar from '../final/NavBar';
 import SlideshowIndicator from '../elemental/SlideshowIndicator';
 
 const IMG_RATIO = 0.5;
@@ -17,7 +17,7 @@ type HeroImageProps = {
     path: string[];
 };
 
-export default class HeroHeader extends Responsive<HeroImageProps> {
+export default class HeroHeader extends React.Component<HeroImageProps, any> {
     props: HeroImageProps;
 
     constructor(props: HeroImageProps) {
@@ -31,7 +31,7 @@ export default class HeroHeader extends Responsive<HeroImageProps> {
         };
     }
 
-    switchImage = () => {
+    switchImage = async () => {
         const prevPointer = this.state.pointer;
         const maxPointer = this.props.path.length;
         this.setState({
@@ -45,9 +45,9 @@ export default class HeroHeader extends Responsive<HeroImageProps> {
             backgroundImage: `url(${this.props.path[st.pointer]})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            width: `${st.winWidth}px`,
-            paddingTop: `${st.winWidth * IMG_RATIO * 0.975}px`,
-            paddingBottom: `${st.winWidth * IMG_RATIO * 0.025}px`
+            width: '100%',
+            paddingTop: '50%',
+            paddingBottom: '1.5%'
         };
     };
 
