@@ -7,11 +7,12 @@ const TEXT_PADD = '12px 0';
 const TEXT_MARGIN = '0';
 
 type ResponsiveTextProps = {
-    children: any;
+    children: string;
     size: number;
     family?: string;
     color?: string;
-    style?: object;
+    padding?: string;
+    bold?: boolean;
 };
 
 export default class ResponsiveText extends Responsive<ResponsiveTextProps> {
@@ -33,11 +34,11 @@ export default class ResponsiveText extends Responsive<ResponsiveTextProps> {
         const st = this.state;
 
         return {
-            ...this.props.style,
             fontFamily: this.props.family || DEFAULT_TEXT_FAMILY,
             fontSize: `${this.props.size * st.winWidth * 0.0004}px`,
+            fontWeight: !this.props.bold ? ('normal' as 'normal') : ('bold' as 'bold'),
             color: this.props.color || DEFAULT_TEXT_COL,
-            padding: TEXT_PADD,
+            padding: this.props.padding || TEXT_PADD,
             margin: TEXT_MARGIN
         };
     };

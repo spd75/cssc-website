@@ -1,26 +1,34 @@
+import * as CommonStyles from '../styles/common-styles';
 import React from 'react';
 import ResponsiveText from './ResponsiveText';
 
-export default class EventText extends React.Component {
-    constructor(props: any) {
+type EventTextType = {
+    children: string;
+    title: string;
+};
+
+export default class EventText extends React.Component<EventTextType, any> {
+    props: EventTextType;
+
+    constructor(props: EventTextType) {
         super(props);
+        this.props = props;
     }
 
     containerStyle = () => ({
-        display: 'flex',
-        flexDirection: 'column',
-        textAlign: 'center'
+        ...CommonStyles.FlexCenterColText,
+        backgroundColor: '#F9F9F9',
+        padding: '3%'
     });
-
-    titleStyle = () => ({
-        fontFamily: 'Arvo',
-        color: '#48A8DE',
-        size: ''
-    });
-
-    textStyle = () => {};
 
     render = () => {
-        return <div></div>;
+        return (
+            <div style={this.containerStyle()}>
+                <ResponsiveText size={42} color="#48A8DE">
+                    {this.props.title}
+                </ResponsiveText>
+                <ResponsiveText size={24}>{this.props.children}</ResponsiveText>
+            </div>
+        );
     };
 }

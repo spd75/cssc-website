@@ -1,3 +1,4 @@
+import * as CommonStyles from '../styles/common-styles';
 import React from 'react';
 import NavBar from '../final/NavBar';
 import SlideshowIndicator from '../elemental/SlideshowIndicator';
@@ -42,10 +43,7 @@ export default class HeroHeader extends React.Component<HeroImageProps, any> {
     imgStyle = () => {
         const st = this.state;
         return {
-            backgroundImage: `url(${this.props.path[st.pointer]})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            width: '100%',
+            ...CommonStyles.ImageCover(this.props.path[st.pointer]),
             paddingTop: '50%',
             paddingBottom: '1.5%'
         };

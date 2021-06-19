@@ -10,7 +10,7 @@ const InvalidProps = Error('Number of navlinks and oncliks are not the same');
 InvalidProps.name = 'InvalidProps';
 
 type NavLinkBarProps = {
-    navLinks: string[];
+    children: string[];
     onClicks: (() => void)[];
 };
 
@@ -20,7 +20,7 @@ export default class NavLinkBar extends React.Component<NavLinkBarProps, any> {
     constructor(props: NavLinkBarProps) {
         super(props);
 
-        if (props.navLinks.length !== props.onClicks.length) {
+        if (props.children.length !== props.onClicks.length) {
             throw InvalidProps;
         }
 
@@ -31,9 +31,9 @@ export default class NavLinkBar extends React.Component<NavLinkBarProps, any> {
     renderNavLinks = () => {
         const props = this.props;
         var navLinks = [];
-        for (var i = 0; i < props.navLinks.length; i++) {
-            navLinks.push(<NavItem onClick={props.onClicks[i]}>{props.navLinks[i]}</NavItem>);
-            if (i !== props.navLinks.length - 1) {
+        for (var i = 0; i < props.children.length; i++) {
+            navLinks.push(<NavItem onClick={props.onClicks[i]}>{props.children[i]}</NavItem>);
+            if (i !== props.children.length - 1) {
                 navLinks.push(<Separator offset={SEPARATOR_OFFSET} />);
             }
         }

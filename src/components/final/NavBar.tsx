@@ -35,7 +35,7 @@ export default class NavBar extends React.Component<NavBarProps, any> {
         return (
             <div style={this.containerStyle()}>
                 <NavTitleBar />
-                <NavLinkBar navLinks={this.props.navLinks} onClicks={this.props.onClicks} />
+                <NavLinkBar onClicks={this.props.onClicks}>{this.props.navLinks}</NavLinkBar>
                 <EnderBar />
             </div>
         );
