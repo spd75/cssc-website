@@ -1,6 +1,6 @@
-import * as CommonStyles from '../styles/common-styles';
-import Hoverable from '../super-comps/Hoverable';
-import ResponsiveText from './ResponsiveText';
+import * as CommonStyles from '../../styles/common-styles';
+import Hoverable from '../../super-comps/Hoverable';
+import ResponsiveText from '../../elemental-comps/ResponsiveText';
 
 const BUTTON_PRIMARY_COL = '#fff';
 const BUTTON_HOVER_COL = '#aaa';

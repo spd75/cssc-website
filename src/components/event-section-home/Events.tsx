@@ -1,7 +1,7 @@
 import * as CommonStyles from '../styles/common-styles';
-import EventBanner, { EventBannerProps } from '../final/EventBanner';
+import EventBanner, { EventBannerProps } from './EventBanner';
 import React from 'react';
-import ResponsiveText from '../elemental/ResponsiveText';
+import ResponsiveText from '../elemental-comps/ResponsiveText';
 
 const OUTER_CONTAIN_WIDTH = '100%';
 const OUTER_CONTAIN_PADD = '3% 0';

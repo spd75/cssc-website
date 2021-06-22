@@ -12,8 +12,8 @@ import Hero4 from './assets/hero4.jpg';
 import Dummy from './assets/dummy.png';
 
 /** Components */
-import Events from './components/sections/Events';
-import Header from './components/sections/Header';
+import Events from './components/event-section-home/Events';
+import Header from './components/header/Header';
 import Betski from './text';
 
 const navFunctions = [

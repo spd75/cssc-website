@@ -1,5 +1,5 @@
 import React from 'react';
-import * as CommonStyles from '../styles/common-styles';
+import * as CommonStyles from '../../styles/common-styles';
 
 const PointerExceededTotal = new Error('Slideshow pointer exceeded total number of elements.');
 PointerExceededTotal.name = 'PointerExceededTotal';

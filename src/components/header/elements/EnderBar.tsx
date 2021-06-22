@@ -1,6 +1,6 @@
-import * as CommonStyles from '../styles/common-styles';
-import IconImage from '../elemental/IconImage';
-import NavBarButton from '../elemental/NavBarButton';
+import * as CommonStyles from '../../styles/common-styles';
+import IconImage from '../sub-comps/IconImage';
+import NavBarButton from '../sub-comps/NavBarButton';
 import React from 'react';
 
 // Icons

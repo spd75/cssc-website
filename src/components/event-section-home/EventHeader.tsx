@@ -1,6 +1,6 @@
 import * as CommonStyles from '../styles/common-styles';
 import React from 'react';
-import ResponsiveText from './ResponsiveText';
+import ResponsiveText from '../elemental-comps/ResponsiveText';
 
 const OUTER_PADD_BOTTOM = '50%';
 

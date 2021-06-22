@@ -1,6 +1,6 @@
-import EnderBar from '../complex/EnderBar';
-import NavLinkBar from '../complex/NavLinkBar';
-import NavTitleBar from '../complex/NavTitleBar';
+import EnderBar from './elements/EnderBar';
+import NavLinkBar from './elements/NavLinkBar';
+import NavTitleBar from './elements/NavTitleBar';
 import React from 'react';
 
 // CURRENT VALUES ADDED TO NAVBAR

@@ -1,6 +1,6 @@
-import * as CommonStyles from '../styles/common-styles';
+import * as CommonStyles from '../../styles/common-styles';
 import React from 'react';
-import { ReactComponent as Logo } from '../../assets/Logo.svg';
+import { ReactComponent as Logo } from '../../../assets/Logo.svg';
 
 const CONTAIN_BG_COL = '#48A8DE';
 const CONTAIN_WIDTH = '10%';

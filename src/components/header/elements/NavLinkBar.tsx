@@ -1,7 +1,7 @@
-import * as CommonStyles from '../styles/common-styles';
-import NavItem from '../elemental/NavItem';
+import * as CommonStyles from '../../styles/common-styles';
+import NavItem from '../sub-comps/NavItem';
 import React from 'react';
-import Separator from '../elemental/Separator';
+import Separator from '../sub-comps/Separator';
 
 const CONTAIN_PRIM_COL = 'rgba(255, 255, 255, 0.9)';
 const CONTAIN_FLEX_GROW = 10;

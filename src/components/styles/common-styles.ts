@@ -6,7 +6,7 @@ export const FlexCC = {
 
 export const FlexCS = {
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'stretch',
     justifyContent: 'center'
 };
 

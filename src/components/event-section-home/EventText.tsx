@@ -1,6 +1,6 @@
 import * as CommonStyles from '../styles/common-styles';
 import React from 'react';
-import ResponsiveText from './ResponsiveText';
+import ResponsiveText from '../elemental-comps/ResponsiveText';
 
 const CONTAIN_BG_COL = '#F9F9F9';
 const CONTAIN_PADD = '4%';

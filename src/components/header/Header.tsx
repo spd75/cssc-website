@@ -1,7 +1,7 @@
 import * as CommonStyles from '../styles/common-styles';
 import React from 'react';
-import NavBar from '../final/NavBar';
-import SlideshowIndicator from '../elemental/SlideshowIndicator';
+import NavBar from './NavBar';
+import SlideshowIndicator from './sub-comps/SlideshowIndicator';
 
 const IMG_RATIO = 0.5;
 

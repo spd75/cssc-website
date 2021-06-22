@@ -1,6 +1,6 @@
-import * as CommonStyles from '../styles/common-styles';
+import * as CommonStyles from '../../styles/common-styles';
 import Icons from 'react-icons';
-import HoverableComponent from '../super-comps/Hoverable';
+import HoverableComponent from '../../super-comps/Hoverable';
 
 const BORDER_RADIUS = '50%';
 

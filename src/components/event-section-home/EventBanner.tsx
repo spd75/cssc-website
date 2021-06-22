@@ -1,6 +1,6 @@
 import React from 'react';
-import EventHeader from '../elemental/EventHeader';
-import EventText from '../elemental/EventText';
+import EventHeader from './EventHeader';
+import EventText from './EventText';
 
 const CONTAIN_WIDTH = '18%';
 const CONTAIN_BOX_SHADOW = '1px 1px 5px #CCC';

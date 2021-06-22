@@ -1,6 +1,6 @@
-import * as CommonStyles from '../styles/common-styles';
-import Hoverable from '../super-comps/Hoverable';
-import ResponsiveText from './ResponsiveText';
+import * as CommonStyles from '../../styles/common-styles';
+import Hoverable from '../../super-comps/Hoverable';
+import ResponsiveText from '../../elemental-comps/ResponsiveText';
 
 const ITEM_PRIM_COL = 'rgba(0, 0, 0, 0.0)';
 const ITEM_HOVER_COL = 'rgba(72, 168, 222, 1.0)';
