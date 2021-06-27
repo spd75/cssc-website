@@ -16,10 +16,14 @@ export const FlexCenterColText = {
     textAlign: 'center' as 'center'
 };
 
-export const ImageCover = (imgPath: string) => ({
+export const ImageCoverPartial = (imgPath: string) => ({
     backgroundImage: `url(${imgPath})`,
     backgroundPosition: 'center',
-    backgroundSize: 'cover',
+    backgroundSize: 'cover'
+});
+
+export const ImageCover = (imgPath: string) => ({
+    ...ImageCoverPartial(imgPath),
     width: '100%'
 });
 

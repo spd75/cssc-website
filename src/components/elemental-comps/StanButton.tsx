@@ -16,6 +16,7 @@ const TEXT_FONT_FAMILY = Universal.MAIN_FONT;
 type StanButtonProps = {
     title: string;
     onClick: () => void;
+    textSize: number;
 };
 
 export default class StanButton extends Hoverable<StanButtonProps> {
@@ -56,7 +57,7 @@ export default class StanButton extends Hoverable<StanButtonProps> {
                 onMouseEnter={this.setHovered}
                 onMouseLeave={this.setUnhovered}
             >
-                <ResponsiveText size={30} color={TEXT_PRIM_COL} padding="0">
+                <ResponsiveText size={this.props.textSize} color={TEXT_PRIM_COL} padding="0">
                     {this.props.title}
                 </ResponsiveText>
             </button>
