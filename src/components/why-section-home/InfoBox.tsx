@@ -6,6 +6,7 @@ import StanButton from '../elemental-comps/StanButton';
 
 const CONTAIN_DEFAULT_WIDTH = '50%';
 const CONTAIN_PADD = '2%';
+const CONTAIN_BOX_SHADOW = '1px 1px 10px #BBB';
 
 const TITLE_COL = Universal.WEB_BLUE;
 const TITLE_PADD = '0 0 2% 0';
@@ -40,7 +41,8 @@ export default class InfoBox extends React.Component<InfoBoxProps, any> {
             flexDirection: 'column' as 'column',
             backgroundColor: BG_COL,
             width: this.props.width || CONTAIN_DEFAULT_WIDTH,
-            padding: CONTAIN_PADD
+            padding: CONTAIN_PADD,
+            boxShadow: CONTAIN_BOX_SHADOW
         };
     };
 
