@@ -9,8 +9,8 @@ const OUTER_CONTAIN_PADD = '3% 0';
 const INNER_CONTAIN_WIDTH = '100%';
 const INNER_CONTAIN_COL_GAP = '5%';
 
-const HEADER_SIZE = 52;
-const HEADER_PADD = '0 0 3% 0';
+const TITLE_SIZE = 52;
+const TITLE_PADD = '0 0 3% 0';
 
 type EventData = {
     text: string;
@@ -65,7 +65,7 @@ export default class EventSection extends React.Component<EventSectionProps> {
     render = () => {
         return (
             <div style={this.outerContainerStyle()}>
-                <ResponsiveText size={HEADER_SIZE} padding={HEADER_PADD}>
+                <ResponsiveText size={TITLE_SIZE} padding={TITLE_PADD}>
                     Upcoming Trips and Events
                 </ResponsiveText>
                 <div style={this.eventsContainerStyle()}>{this.renderNavLinks()}</div>

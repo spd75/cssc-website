@@ -15,6 +15,7 @@ import Dummy from './assets/dummy.png';
 import Events from './components/event-section-home/Events';
 import Header from './components/header/Header';
 import Betski from './text';
+import Why from './components/why-section-home/Why';
 
 const navFunctions = [
     () => console.log('club news!'),
@@ -33,24 +34,21 @@ const eventData = [
         month: 'June',
         day: '10',
         imgPath: Dummy,
-        text:
-            'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
+        text: 'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
     },
     {
         title: 'Start of JO week',
         month: 'June',
         day: '10',
         imgPath: Dummy,
-        text:
-            'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
+        text: 'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
     },
     {
         title: 'Start of JO week',
         month: 'June',
         day: '10',
         imgPath: Dummy,
-        text:
-            'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
+        text: 'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
     }
 ];
 
@@ -59,6 +57,7 @@ ReactDOM.render(
         <Header path={[Hero1, Hero2, Hero3, Hero4]} />
         <Betski />
         <Events>{eventData}</Events>
+        <Why />
     </React.StrictMode>,
     document.getElementById('root')
 );

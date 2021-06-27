@@ -1,18 +1,21 @@
+import * as Universal from '../../universal';
 import * as CommonStyles from '../styles/common-styles';
 import Hoverable from '../super-comps/Hoverable';
+import ResponsiveText from '../elemental-comps/ResponsiveText';
 
-const BUTTON_PRIM_COL = '#48A8DE';
-const BUTTON_HOVER_COL = '#4084CB';
-const DEFAULT_LAT_PADD = '12px';
+const BUTTON_PRIM_COL = Universal.WEB_BLUE;
+const BUTTON_HOVER_COL = Universal.WEB_BLUE_HOVER;
+const BUTTON_WIDTH = Universal.MAX_CONTENT;
+const BUTTON_HEIGHT = Universal.MAX_CONTENT;
+const BUTTON_PADDING = '2% 8%';
 
-const TEXT_PRIM_COL = '#fff';
+const TEXT_PRIM_COL = Universal.WHITE;
 const TEXT_SIZE = '12px';
-const TEXT_FONT_FAMILY = 'Arvo';
+const TEXT_FONT_FAMILY = Universal.MAIN_FONT;
 
 type StanButtonProps = {
     title: string;
     onClick: () => void;
-    latPadding?: number;
 };
 
 export default class StanButton extends Hoverable<StanButtonProps> {
@@ -30,7 +33,9 @@ export default class StanButton extends Hoverable<StanButtonProps> {
         return {
             ...CommonStyles.FlexCC,
             backgroundColor: !st.hovering ? BUTTON_PRIM_COL : BUTTON_HOVER_COL,
-            padding: `8px ${this.props.latPadding || DEFAULT_LAT_PADD}`,
+            width: BUTTON_WIDTH,
+            height: BUTTON_HEIGHT,
+            padding: BUTTON_PADDING,
             border: 'none',
             cursor: st.cursor
         };
@@ -51,7 +56,9 @@ export default class StanButton extends Hoverable<StanButtonProps> {
                 onMouseEnter={this.setHovered}
                 onMouseLeave={this.setUnhovered}
             >
-                <p style={this.textStyle()}>{this.props.title}</p>
+                <ResponsiveText size={30} color={TEXT_PRIM_COL} padding="0">
+                    {this.props.title}
+                </ResponsiveText>
             </button>
         );
     };
