@@ -6,7 +6,7 @@ import StanButton from '../elemental-comps/StanButton';
 
 const CONTAIN_DEFAULT_WIDTH = '50%';
 const CONTAIN_PADD = '3%';
-const CONTAIN_BOX_SHADOW = '1px 1px 10px #BBB';
+const CONTAIN_BOX_SHADOW = '1px 1px 10px #777';
 
 const TITLE_COL = Universal.WEB_BLUE;
 const TITLE_PADD = '0 0 2% 0';

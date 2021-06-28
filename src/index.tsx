@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-/** Hero Images */
+/** Images */
 import Hero1 from './assets/hero1.jpg';
 import Hero2 from './assets/hero2.jpg';
 import Hero3 from './assets/hero3.jpg';
 import Hero4 from './assets/hero4.jpg';
+
+import Why1 from './assets/why1.jpg';
+import Why2 from './assets/why2.jpg';
+import Why3 from './assets/why3.jpeg';
 
 import Dummy from './assets/dummy.png';
 
@@ -87,7 +91,7 @@ ReactDOM.render(
         <Header path={[Hero1, Hero2, Hero3, Hero4]} />
         <Betski />
         <Events>{eventData}</Events>
-        <Why />
+        <Why data={whyData} imgPaths={[Why1, Why2, Why3]} />
     </React.StrictMode>,
     document.getElementById('root')
 );
