@@ -1,3 +1,4 @@
+import * as CommonStyles from '../styles/common-styles';
 import React from 'react';
 import ResponsiveText from '../elemental-comps/ResponsiveText';
 import StanButton from '../elemental-comps/StanButton';
@@ -15,10 +16,19 @@ export default class TextButton extends React.Component<TextButtonProps, any> {
         this.props = props;
     }
 
+    containerStyle = () => ({
+        ...CommonStyles.FlexCC,
+        flexDirection: 'column' as 'column',
+        textAlign: 'center' as 'center',
+        padding: '7% 8%'
+    });
+
     render = () => {
         return (
-            <div>
-                <ResponsiveText size={70}>{this.props.children}</ResponsiveText>
+            <div style={this.containerStyle()}>
+                <ResponsiveText size={74} padding="0 0 4% 0">
+                    {this.props.children}
+                </ResponsiveText>
                 <StanButton
                     title={this.props.buttonTitle}
                     onClick={() => console.log('hi')}

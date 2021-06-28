@@ -20,6 +20,8 @@ import Events from './components/event-section-home/Events';
 import Header from './components/header/Header';
 import Betski from './text';
 import Why from './components/why-section-home/Why';
+import Join from './components/join-section-home/Join';
+import Footer from './components/footer/Footer';
 
 const navFunctions = [
     () => console.log('club news!'),
@@ -92,6 +94,8 @@ ReactDOM.render(
         <Betski />
         <Events>{eventData}</Events>
         <Why data={whyData} imgPaths={[Why1, Why2, Why3]} />
+        <Join />
+        <Footer />
     </React.StrictMode>,
     document.getElementById('root')
 );
