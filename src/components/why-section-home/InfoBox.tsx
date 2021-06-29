@@ -10,9 +10,13 @@ const CONTAIN_BOX_SHADOW = '1px 1px 10px #777';
 
 const TITLE_COL = Universal.WEB_BLUE;
 const TITLE_PADD = '0 0 2% 0';
+const TITLE_SIZE = 38;
 
 const TEXT_COL = Universal.LIGHT_BLACK;
 const TEXT_PADD = '0 0 3% 0';
+const TEXT_SIZE = 24;
+
+const BUTTON_TEXT_SIZE = 26;
 
 const BG_COL = 'rgba(255, 255, 255, 0.95)';
 
@@ -51,16 +55,16 @@ export default class InfoBox extends React.Component<InfoBoxProps, any> {
 
         return (
             <div style={this.containerStyle()}>
-                <ResponsiveText size={34 * mult} color={TITLE_COL} padding={TITLE_PADD}>
+                <ResponsiveText size={TITLE_SIZE * mult} color={TITLE_COL} padding={TITLE_PADD}>
                     {this.props.title}
                 </ResponsiveText>
-                <ResponsiveText size={22 * mult} color={TEXT_COL} padding={TEXT_PADD}>
+                <ResponsiveText size={TEXT_SIZE * mult} color={TEXT_COL} padding={TEXT_PADD}>
                     {this.props.children}
                 </ResponsiveText>
                 <StanButton
                     title={this.props.buttonText}
                     onClick={() => console.log('clicked')}
-                    textSize={26}
+                    textSize={BUTTON_TEXT_SIZE}
                 />
             </div>
         );

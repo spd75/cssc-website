@@ -2,6 +2,9 @@ import * as Universal from '../../universal';
 import React from 'react';
 import ResponsiveText from '../elemental-comps/ResponsiveText';
 
+const TEXT_SIZE = 28;
+const CONTAIN_PADD = '1% 0';
+
 export default class Footer extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
@@ -10,13 +13,13 @@ export default class Footer extends React.Component<any, any> {
     containerStyle = () => ({
         backgroundColor: Universal.WEB_BLUE,
         textAlign: 'center' as 'center',
-        padding: '1.5% 0'
+        padding: CONTAIN_PADD
     });
 
     render = () => {
         return (
             <div style={this.containerStyle()}>
-                <ResponsiveText size={46} color={Universal.WHITE}>
+                <ResponsiveText size={TEXT_SIZE} color={Universal.WHITE}>
                     {Universal.FOOTER_TEXT}
                 </ResponsiveText>
             </div>

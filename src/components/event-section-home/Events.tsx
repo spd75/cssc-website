@@ -4,13 +4,13 @@ import React from 'react';
 import ResponsiveText from '../elemental-comps/ResponsiveText';
 
 const OUTER_CONTAIN_WIDTH = '100%';
-const OUTER_CONTAIN_PADD = '3% 0';
+const OUTER_CONTAIN_PADD = '4% 0 6% 0';
 
 const INNER_CONTAIN_WIDTH = '100%';
 const INNER_CONTAIN_COL_GAP = '5%';
 
 const TITLE_SIZE = 52;
-const TITLE_PADD = '0 0 3% 0';
+const TITLE_PADD = '0 0 4% 0';
 
 type EventData = {
     text: string;
