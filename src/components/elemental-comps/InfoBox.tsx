@@ -12,7 +12,8 @@ const TITLE_PADD = '0 0 2% 0';
 const TITLE_SIZE = 38;
 
 const TEXT_COL = Universal.LIGHT_BLACK;
-const TEXT_PADD = '0 0 3% 0';
+const TEXT_PADD_WITH_BUTTON = '0 0 3% 0';
+const TEXT_PADD_NO_BUTTON = '2%';
 const TEXT_SIZE = 24;
 
 const BUTTON_TEXT_SIZE = 26;
@@ -73,10 +74,12 @@ export default class InfoBox extends React.Component<InfoBoxProps, any> {
 
     render = () => {
         const mult = this.props.textSizeMultiplier || DEFAULT_TEXT_SIZE_MULT;
+        const padding = this.props.buttonText ? TEXT_PADD_WITH_BUTTON : TEXT_PADD_NO_BUTTON;
+
         return (
             <div style={this.containerStyle()}>
                 {this.renderTitle(mult)}
-                <ResponsiveText size={TEXT_SIZE * mult} color={TEXT_COL} padding={TEXT_PADD}>
+                <ResponsiveText size={TEXT_SIZE * mult} color={TEXT_COL} padding={padding}>
                     {this.props.children}
                 </ResponsiveText>
                 {this.renderButton()}

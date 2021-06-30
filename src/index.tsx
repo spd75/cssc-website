@@ -108,8 +108,7 @@ const ikonButtonText = 'Learn More';
 
 const ikonContainData = {
     children:
-        'Gain access to 45 mountains, including Alta, Snowbird, BigSky, Jackson Hole, Killington, Sugarbush, and so many more.',
-    width: '50%'
+        'Gain access to 45 mountains including Snowbird, Alta, Big Sky, Killington, Jackson Hole, Sugarbush, and so many more.'
 };
 
 ReactDOM.render(
