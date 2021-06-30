@@ -13,6 +13,8 @@ import Why1 from './assets/why1.jpg';
 import Why2 from './assets/why2.jpg';
 import Why3 from './assets/why3.jpeg';
 
+import Ikon1 from './assets/ikon.jpg';
+
 import Dummy from './assets/dummy.png';
 
 /** Components */
@@ -22,6 +24,7 @@ import Betski from './text';
 import Why from './components/why-section-home/Why';
 import Join from './components/join-section-home/Join';
 import Footer from './components/footer/Footer';
+import Ikon from './components/ikon-section-home/ikon-section-home';
 
 const navFunctions = [
     () => console.log('club news!'),
@@ -98,6 +101,17 @@ const joinData = [
     }
 ];
 
+const ikonText =
+    'Cornell Ski and Snowboard Club has joined the Ikon Pass College Club to offer exclusive college pricing to the Cornell community and beyond on Ikon Passes. For the 21/22 season, current students at any level of study from ANY SCHOOL will be eligible to purchase the Ikon Pass for $619, the Ikon Base Pass with Add-On for $599, and the Ikon Base Pass for $449.  Please check out the Ikon Pass online to learn more about the incredible portfolio of mountains that the Ikon Pass unlocks.';
+
+const ikonButtonText = 'Learn More';
+
+const ikonContainData = {
+    children:
+        'Gain access to 45 mountains, including Alta, Snowbird, BigSky, Jackson Hole, Killington, Sugarbush, and so many more.',
+    width: '50%'
+};
+
 ReactDOM.render(
     <React.StrictMode>
         <Header path={[Hero1, Hero2, Hero3, Hero4]} />
@@ -105,6 +119,12 @@ ReactDOM.render(
         <Events>{eventData}</Events>
         <Why data={whyData} imgPaths={[Why1, Why2, Why3]} />
         <Join data={joinData} />
+        <Ikon
+            containImg={Ikon1}
+            containData={ikonContainData}
+            infoText={ikonText}
+            buttonText={ikonButtonText}
+        />
         <Footer />
     </React.StrictMode>,
     document.getElementById('root')

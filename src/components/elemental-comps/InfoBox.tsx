@@ -1,8 +1,8 @@
 import * as CommonStyles from '../styles/common-styles';
 import * as Universal from '../../universal';
 import React from 'react';
-import ResponsiveText from '../elemental-comps/ResponsiveText';
-import StanButton from '../elemental-comps/StanButton';
+import ResponsiveText from './ResponsiveText';
+import StanButton from './StanButton';
 
 const CONTAIN_PADD = '3%';
 const CONTAIN_BOX_SHADOW = '1px 1px 10px #777';
@@ -22,9 +22,9 @@ const BG_COL = 'rgba(255, 255, 255, 0.95)';
 const DEFAULT_TEXT_SIZE_MULT = 1;
 
 export type InfoBoxProps = {
-    title: string;
+    title?: string;
     children: string;
-    buttonText: string;
+    buttonText?: string;
     textSizeMultiplier?: number;
     width?: string;
 };
@@ -49,22 +49,37 @@ export default class InfoBox extends React.Component<InfoBoxProps, any> {
         };
     };
 
-    render = () => {
-        const mult = this.props.textSizeMultiplier || DEFAULT_TEXT_SIZE_MULT;
-
-        return (
-            <div style={this.containerStyle()}>
+    renderTitle = (mult: number) => {
+        if (this.props.title) {
+            return (
                 <ResponsiveText size={TITLE_SIZE * mult} color={TITLE_COL} padding={TITLE_PADD}>
                     {this.props.title}
                 </ResponsiveText>
-                <ResponsiveText size={TEXT_SIZE * mult} color={TEXT_COL} padding={TEXT_PADD}>
-                    {this.props.children}
-                </ResponsiveText>
+            );
+        }
+    };
+
+    renderButton = () => {
+        if (this.props.buttonText) {
+            return (
                 <StanButton
                     title={this.props.buttonText}
                     onClick={() => console.log('clicked')}
                     textSize={BUTTON_TEXT_SIZE}
                 />
+            );
+        }
+    };
+
+    render = () => {
+        const mult = this.props.textSizeMultiplier || DEFAULT_TEXT_SIZE_MULT;
+        return (
+            <div style={this.containerStyle()}>
+                {this.renderTitle(mult)}
+                <ResponsiveText size={TEXT_SIZE * mult} color={TEXT_COL} padding={TEXT_PADD}>
+                    {this.props.children}
+                </ResponsiveText>
+                {this.renderButton()}
             </div>
         );
     };

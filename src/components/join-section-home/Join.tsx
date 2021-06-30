@@ -1,6 +1,6 @@
 import * as Universal from '../../universal';
 import React from 'react';
-import TextButton, { TextButtonProps } from './TextButton';
+import TextButton, { TextButtonProps } from '../elemental-comps/TextButton';
 
 const DIVIDER_HEIGHT = '1px';
 const DIVIDER_WIDTH = '80%';

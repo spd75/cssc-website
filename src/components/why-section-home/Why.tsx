@@ -1,7 +1,7 @@
 import * as CommonStyles from '../styles/common-styles';
 import * as Universal from '../../universal';
-import ContainImage from './ContainImage';
-import { InfoBoxProps } from './InfoBox';
+import ContainImage from '../elemental-comps/ContainImage';
+import { InfoBoxProps } from '../elemental-comps/InfoBox';
 import React from 'react';
 import ResponsiveText from '../elemental-comps/ResponsiveText';
 
