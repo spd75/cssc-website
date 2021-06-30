@@ -17,6 +17,7 @@ type StanButtonProps = {
     title: string;
     onClick: () => void;
     textSize: number;
+    padding?: string;
 };
 
 export default class StanButton extends Hoverable<StanButtonProps> {
@@ -36,7 +37,7 @@ export default class StanButton extends Hoverable<StanButtonProps> {
             backgroundColor: !st.hovering ? BUTTON_PRIM_COL : BUTTON_HOVER_COL,
             width: BUTTON_WIDTH,
             height: BUTTON_HEIGHT,
-            padding: BUTTON_PADDING,
+            padding: this.props.padding || BUTTON_PADDING,
             border: 'none',
             cursor: st.cursor
         };

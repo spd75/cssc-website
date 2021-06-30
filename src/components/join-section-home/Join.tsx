@@ -1,34 +1,44 @@
+import * as Universal from '../../universal';
 import React from 'react';
-import TextButton from './TextButton';
+import TextButton, { TextButtonProps } from './TextButton';
 
-type JoinProps = {};
+const DIVIDER_HEIGHT = '1px';
+const DIVIDER_WIDTH = '80%';
+const DIVIDER_MARGIN = 'auto';
+const DIVIDER_BG_COL = '#AAA';
+
+const InvalidDataError = new Error('Info box props or image paths does not have correct length.');
+InvalidDataError.name = 'Invalid Data Error';
+
+type JoinProps = {
+    data: TextButtonProps[];
+};
 
 export default class Join extends React.Component<JoinProps, any> {
     props: JoinProps;
 
     constructor(props: JoinProps) {
         super(props);
+        Universal.validateLength(props.data, 2, 'Data', 'Join');
         this.props = props;
     }
 
     dividerSection = () => ({
-        height: '1px',
-        width: '80%',
-        margin: 'auto',
-        backgroundColor: '#AAA'
+        height: DIVIDER_HEIGHT,
+        width: DIVIDER_WIDTH,
+        margin: DIVIDER_MARGIN,
+        backgroundColor: DIVIDER_BG_COL
     });
 
     render = () => {
         return (
             <div>
-                <TextButton buttonTitle="Sign Up to Become a Member">
-                    Convinced? Sign up below with a Cornell email to become a full member of
-                    Cornell's Ski and Snowboard Club!
+                <TextButton buttonTitle={this.props.data[0].buttonTitle}>
+                    {this.props.data[0].children}
                 </TextButton>
                 <div style={this.dividerSection()} />
-                <TextButton buttonTitle="Join the ListServ">
-                    Don't want to be committed to being a full member? Join the ListServ to receive
-                    club updates to stay tuned!
+                <TextButton buttonTitle={this.props.data[1].buttonTitle}>
+                    {this.props.data[1].children}
                 </TextButton>
             </div>
         );

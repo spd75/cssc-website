@@ -3,7 +3,15 @@ import React from 'react';
 import ResponsiveText from '../elemental-comps/ResponsiveText';
 import StanButton from '../elemental-comps/StanButton';
 
-type TextButtonProps = {
+const CONTAIN_PADD = '7% 15%';
+
+const TEXT_SIZE = 58;
+const TEXT_PADD = '0 0 4% 0';
+
+const BUTTON_TEXT_SIZE = 28;
+const BUTTON_PADD = '1.5% 4%';
+
+export type TextButtonProps = {
     children: string;
     buttonTitle: string;
 };
@@ -20,19 +28,20 @@ export default class TextButton extends React.Component<TextButtonProps, any> {
         ...CommonStyles.FlexCC,
         flexDirection: 'column' as 'column',
         textAlign: 'center' as 'center',
-        padding: '7% 8%'
+        padding: CONTAIN_PADD
     });
 
     render = () => {
         return (
             <div style={this.containerStyle()}>
-                <ResponsiveText size={74} padding="0 0 4% 0">
+                <ResponsiveText size={TEXT_SIZE} padding={TEXT_PADD}>
                     {this.props.children}
                 </ResponsiveText>
                 <StanButton
                     title={this.props.buttonTitle}
                     onClick={() => console.log('hi')}
-                    textSize={40}
+                    textSize={BUTTON_TEXT_SIZE}
+                    padding={BUTTON_PADD}
                 />
             </div>
         );

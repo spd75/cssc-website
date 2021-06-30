@@ -1,4 +1,5 @@
 import * as CommonStyles from '../styles/common-styles';
+import * as Universal from '../../universal';
 import ContainImage from './ContainImage';
 import { InfoBoxProps } from './InfoBox';
 import React from 'react';
@@ -19,9 +20,6 @@ const FIRST_CI_PADD = '30% 30% 3% 5%';
 const SECOND_CI_PADD = '30% 8% 3% 8%';
 const THIRD_CI_PADD = '33% 8% 0 8%';
 
-const InvalidDataError = new Error('Info box props or image paths does not have correct length.');
-InvalidDataError.name = 'Invalid Data Error';
-
 type WhyProps = {
     data: InfoBoxProps[];
     imgPaths: string[];
@@ -33,9 +31,8 @@ export default class Why extends React.Component<WhyProps, any> {
     constructor(props: WhyProps) {
         super(props);
 
-        if (props.data.length !== 3 || props.imgPaths.length !== 3) {
-            throw InvalidDataError;
-        }
+        Universal.validateLength(props.data, 3, 'Data', 'Why');
+        Universal.validateLength(props.imgPaths, 3, 'imgPaths', 'Why');
         this.props = props;
     }
 

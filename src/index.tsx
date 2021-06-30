@@ -40,24 +40,21 @@ const eventData = [
         month: 'June',
         day: '10',
         imgPath: Dummy,
-        text:
-            'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
+        text: 'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
     },
     {
         title: 'Start of JO week',
         month: 'June',
         day: '10',
         imgPath: Dummy,
-        text:
-            'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
+        text: 'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
     },
     {
         title: 'Start of JO week',
         month: 'June',
         day: '10',
         imgPath: Dummy,
-        text:
-            'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
+        text: 'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
     }
 ];
 
@@ -88,13 +85,26 @@ const whyData = [
     }
 ];
 
+const joinData = [
+    {
+        children:
+            'Convinced? Sign up below with a Cornell email to become a full member of Cornell Ski and Snowboard Club!',
+        buttonTitle: 'Sign Up to Become a Member'
+    },
+    {
+        children:
+            'Dont want to be committed to being a full member? Join the ListServ to receive club updates to stay tuned!',
+        buttonTitle: 'Join the ListServ'
+    }
+];
+
 ReactDOM.render(
     <React.StrictMode>
         <Header path={[Hero1, Hero2, Hero3, Hero4]} />
         <Betski />
         <Events>{eventData}</Events>
         <Why data={whyData} imgPaths={[Why1, Why2, Why3]} />
-        <Join />
+        <Join data={joinData} />
         <Footer />
     </React.StrictMode>,
     document.getElementById('root')

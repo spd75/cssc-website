@@ -4,7 +4,6 @@ import React from 'react';
 import ResponsiveText from '../elemental-comps/ResponsiveText';
 import StanButton from '../elemental-comps/StanButton';
 
-const CONTAIN_DEFAULT_WIDTH = '50%';
 const CONTAIN_PADD = '3%';
 const CONTAIN_BOX_SHADOW = '1px 1px 10px #777';
 
