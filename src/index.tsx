@@ -24,7 +24,8 @@ import Betski from './text';
 import Why from './components/why-section-home/Why';
 import Join from './components/join-section-home/Join';
 import Footer from './components/footer/Footer';
-import Ikon from './components/ikon-section-home/ikon-section-home';
+import Ikon from './components/ikon-section-home/Ikon';
+import ContactUs from './components/contact-section-home/ContactUs';
 
 const navFunctions = [
     () => console.log('club news!'),
@@ -124,6 +125,7 @@ ReactDOM.render(
             infoText={ikonText}
             buttonText={ikonButtonText}
         />
+        <ContactUs />
         <Footer />
     </React.StrictMode>,
     document.getElementById('root')

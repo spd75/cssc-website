@@ -1,6 +1,6 @@
 import Responsive from '../super-comps/Responsive';
 
-const DEFAULT_TEXT_FAMILY = 'ARVO';
+const DEFAULT_TEXT_FAMILY = 'Arvo';
 const DEFAULT_TEXT_COL = '#505050';
 
 const TEXT_PADD = '12px 0';
