@@ -1,3 +1,5 @@
+import * as CommonStyles from '../styles/common-styles';
+import StanButton from '../elemental-comps/StanButton';
 import ResponsiveText from '../elemental-comps/ResponsiveText';
 import ResponsiveTextField from '../elemental-comps/ResponsiveTextField';
 import React from 'react';
@@ -5,12 +7,31 @@ import React from 'react';
 export default class ContactUs extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
+
+        this.state = {
+            name: '',
+            subject: '',
+            email: '',
+            message: ''
+        };
     }
 
     containStyle = () => ({
         backgroundColor: '#fff',
         textAlign: 'center' as 'center',
-        padding: '10%'
+        padding: '5% 0'
+    });
+
+    formStyle = () => ({
+        ...CommonStyles.FlexCC,
+        paddingTop: '1.5%',
+        flexDirection: 'column' as 'column'
+    });
+
+    innerFormStyle = () => ({
+        ...CommonStyles.FlexCC,
+        width: '100%',
+        paddingBottom: '0.7%'
     });
 
     inputStyle = () => ({
@@ -21,17 +42,64 @@ export default class ContactUs extends React.Component<any, any> {
         resize: 'none' as 'none'
     });
 
+    buttonContainStyle = () => ({
+        ...CommonStyles.FlexCC,
+        width: '100%',
+        paddingTop: '1.5%'
+    });
+
+    spanStyle = () => ({
+        width: '0.7%'
+    });
+
+    print = (event: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(event.target.value);
+    };
+
     render = () => {
         return (
             <div style={this.containStyle()}>
-                <ResponsiveTextField
-                    id="id"
-                    placeholder="random"
-                    multiLine={false}
-                    size={25}
-                    width="40%"
-                    height="40%"
-                />
+                <ResponsiveText size={50}>Have Questions? Contact Us!</ResponsiveText>
+                <div style={this.formStyle()}>
+                    <div style={this.innerFormStyle()}>
+                        <ResponsiveTextField
+                            placeholder="Name"
+                            onChange={this.print}
+                            size={26}
+                            width="38%"
+                        />
+                        <span style={this.spanStyle()} />
+                        <ResponsiveTextField
+                            placeholder="Email"
+                            onChange={this.print}
+                            size={26}
+                            width="38%"
+                        />
+                    </div>
+
+                    <div style={this.innerFormStyle()}>
+                        <ResponsiveTextField
+                            placeholder="Subject / Reason for contact"
+                            onChange={this.print}
+                            size={26}
+                            width="76.7%"
+                        />
+                    </div>
+
+                    <div style={this.innerFormStyle()}>
+                        <ResponsiveTextField
+                            placeholder="Message"
+                            onChange={this.print}
+                            size={26}
+                            width="76.7%"
+                            height="10%"
+                        />
+                    </div>
+
+                    <div style={this.buttonContainStyle()}>
+                        <StanButton title="Send" onClick={() => {}} textSize={36} padding="1% 6%" />
+                    </div>
+                </div>
             </div>
         );
     };
