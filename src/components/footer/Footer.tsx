@@ -1,6 +1,6 @@
 import * as Universal from '../../universal';
 import React from 'react';
-import ResponsiveText from '../elemental-comps/ResponsiveText';
+import ResponsiveText from '../common-comps/ResponsiveText';
 
 const TEXT_SIZE = 28;
 const CONTAIN_PADD = '1% 0';

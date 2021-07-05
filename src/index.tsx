@@ -18,14 +18,14 @@ import Ikon1 from './assets/ikon.jpg';
 import Dummy from './assets/dummy.png';
 
 /** Components */
-import Events from './components/event-section-home/Events';
+import Events from './components/page-home/section-event/Events';
 import Header from './components/header/Header';
 import Betski from './text';
-import Why from './components/why-section-home/Why';
-import Join from './components/join-section-home/Join';
+import Why from './components/page-home/section-why/Why';
+import Join from './components/page-home/section-join/Join';
 import Footer from './components/footer/Footer';
-import Ikon from './components/ikon-section-home/Ikon';
-import ContactUs from './components/contact-section-home/ContactUs';
+import Ikon from './components/page-home/section-ikon/Ikon';
+import ContactUs from './components/page-home/section-contact/ContactUs';
 
 const navFunctions = [
     () => console.log('club news!'),
