@@ -45,7 +45,7 @@ export default class SlideshowIndicator extends React.Component<SlideShowIndicat
         var indicators = [];
         const st = this.state;
         for (var i = 0; i < this.totalNum; i++) {
-            indicators.push(<span style={this.indicatorStyle(i == st.pointer)} />);
+            indicators.push(<span key={i} style={this.indicatorStyle(i == st.pointer)} />);
         }
         return indicators;
     };

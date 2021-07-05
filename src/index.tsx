@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import WWC from './windowWidthContext';
 
 /** Images */
 import Hero1 from './assets/hero1.jpg';
@@ -17,7 +18,7 @@ import Ikon1 from './assets/ikon.jpg';
 
 import Dummy from './assets/dummy.png';
 
-/** Components */
+/** Components for Home */
 import Events from './components/page-home/section-event/Events';
 import Header from './components/header/Header';
 import Betski from './text';
@@ -26,6 +27,10 @@ import Join from './components/page-home/section-join/Join';
 import Footer from './components/footer/Footer';
 import Ikon from './components/page-home/section-ikon/Ikon';
 import ContactUs from './components/page-home/section-contact/ContactUs';
+import { ThisExpression } from 'typescript';
+
+/** Components for Login */
+import AccountScreen from './components/page-login/AccountScreen';
 
 const navFunctions = [
     () => console.log('club news!'),
@@ -112,21 +117,59 @@ const ikonContainData = {
         'Gain access to 45 mountains including Snowbird, Alta, Big Sky, Killington, Jackson Hole, Sugarbush, and so many more.'
 };
 
+class App extends React.Component<any, any> {
+    props: any;
+
+    constructor(props: any) {
+        super(props);
+        this.props = props;
+        this.state = { windowWidth: 0 };
+    }
+
+    componentDidMount = () => {
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
+    };
+
+    componentWillUnmount = () => window.removeEventListener('resize', this.updateWindowDimensions);
+
+    updateWindowDimensions = () => {
+        this.setState({ windowWidth: window.innerWidth });
+    };
+
+    render = () => {
+        return <WWC.Provider value={this.state.windowWidth}>{this.props.children}</WWC.Provider>;
+    };
+}
+
+// *** HomeScreen ***
+// ReactDOM.render(
+//     <React.StrictMode>
+//         <App>
+//             <Header path={[Hero1, Hero2, Hero3, Hero4]} />
+//             <Betski />
+//             <Events>{eventData}</Events>
+//             <Why data={whyData} imgPaths={[Why1, Why2, Why3]} />
+//             <Join data={joinData} />
+//             <Ikon
+//                 containImg={Ikon1}
+//                 containData={ikonContainData}
+//                 infoText={ikonText}
+//                 buttonText={ikonButtonText}
+//             />
+//             <ContactUs />
+//             <Footer />
+//         </App>
+//     </React.StrictMode>,
+//     document.getElementById('root')
+// );
+
+// *** Login Screen ***
 ReactDOM.render(
     <React.StrictMode>
-        <Header path={[Hero1, Hero2, Hero3, Hero4]} />
-        <Betski />
-        <Events>{eventData}</Events>
-        <Why data={whyData} imgPaths={[Why1, Why2, Why3]} />
-        <Join data={joinData} />
-        <Ikon
-            containImg={Ikon1}
-            containData={ikonContainData}
-            infoText={ikonText}
-            buttonText={ikonButtonText}
-        />
-        <ContactUs />
-        <Footer />
+        <App>
+            <AccountScreen />
+        </App>
     </React.StrictMode>,
     document.getElementById('root')
 );

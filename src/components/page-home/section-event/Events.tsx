@@ -38,6 +38,7 @@ export default class EventSection extends React.Component<EventSectionProps> {
             const curEvent = this.props.children[i];
             events.push(
                 <EventBanner
+                    key={i}
                     title={curEvent.title}
                     month={curEvent.month}
                     day={curEvent.day}

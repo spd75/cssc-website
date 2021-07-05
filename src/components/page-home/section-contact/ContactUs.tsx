@@ -10,8 +10,8 @@ export default class ContactUs extends React.Component<any, any> {
 
         this.state = {
             name: '',
-            subject: '',
             email: '',
+            subject: '',
             message: ''
         };
     }
@@ -52,8 +52,34 @@ export default class ContactUs extends React.Component<any, any> {
         width: '0.7%'
     });
 
-    print = (event: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(event.target.value);
+    updateName = (event: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({
+            name: event.target.value
+        });
+    };
+
+    updateEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({
+            email: event.target.value
+        });
+    };
+
+    updateSubject = (event: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({
+            subject: event.target.value
+        });
+    };
+    updateMessage = (event: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({
+            message: event.target.value
+        });
+    };
+
+    send = () => {
+        console.log('Name: ' + this.state.name);
+        console.log('Email: ' + this.state.email);
+        console.log('Subject: ' + this.state.subject);
+        console.log('Message: ' + this.state.message);
     };
 
     render = () => {
@@ -64,14 +90,14 @@ export default class ContactUs extends React.Component<any, any> {
                     <div style={this.innerFormStyle()}>
                         <ResponsiveTextField
                             placeholder="Name"
-                            onChange={this.print}
+                            onChange={this.updateName}
                             size={26}
                             width="38%"
                         />
                         <span style={this.spanStyle()} />
                         <ResponsiveTextField
                             placeholder="Email"
-                            onChange={this.print}
+                            onChange={this.updateEmail}
                             size={26}
                             width="38%"
                         />
@@ -80,7 +106,7 @@ export default class ContactUs extends React.Component<any, any> {
                     <div style={this.innerFormStyle()}>
                         <ResponsiveTextField
                             placeholder="Subject / Reason for contact"
-                            onChange={this.print}
+                            onChange={this.updateSubject}
                             size={26}
                             width="76.7%"
                         />
@@ -89,7 +115,7 @@ export default class ContactUs extends React.Component<any, any> {
                     <div style={this.innerFormStyle()}>
                         <ResponsiveTextField
                             placeholder="Message"
-                            onChange={this.print}
+                            onChange={this.updateMessage}
                             size={26}
                             width="76.7%"
                             height="10%"
@@ -97,7 +123,12 @@ export default class ContactUs extends React.Component<any, any> {
                     </div>
 
                     <div style={this.buttonContainStyle()}>
-                        <StanButton title="Send" onClick={() => {}} textSize={36} padding="1% 6%" />
+                        <StanButton
+                            title="Send"
+                            onClick={this.send}
+                            textSize={36}
+                            padding="1% 6%"
+                        />
                     </div>
                 </div>
             </div>
