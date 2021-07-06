@@ -1,6 +1,7 @@
 import * as CommonStyles from '../styles/common-styles';
 import LoginBG from '../../assets/LoginBG.png';
 import React from 'react';
+import MainHeader from './MainHeader';
 
 export default class AccountScreen extends React.Component<any, any> {
     constructor(props: any) {
@@ -21,8 +22,7 @@ export default class AccountScreen extends React.Component<any, any> {
 
     innerContainStyle = () => {
         return {
-            width: '72%',
-            height: '56%',
+            width: '76%',
             backgroundColor: 'rgba(255, 255, 255, 0.95)',
             margin: 'auto'
         };
@@ -31,7 +31,9 @@ export default class AccountScreen extends React.Component<any, any> {
     render = () => {
         return (
             <div style={this.containStyle()}>
-                <div style={this.innerContainStyle()}></div>
+                <div style={this.innerContainStyle()}>
+                    <MainHeader />
+                </div>
             </div>
         );
     };
