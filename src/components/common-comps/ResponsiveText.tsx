@@ -9,7 +9,7 @@ const TEXT_PADD = '12px 0';
 const TEXT_MARGIN = '0';
 
 export type ResponsiveTextProps = {
-    children: string;
+    children: any;
     size: number;
     family?: string;
     color?: string;

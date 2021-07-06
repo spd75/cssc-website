@@ -10,9 +10,13 @@ export const FlexCS = {
     justifyContent: 'center'
 };
 
-export const FlexCenterColText = {
+export const FlexColCC = {
     ...FlexCC,
-    flexDirection: 'column' as 'column',
+    flexDirection: 'column' as 'column'
+};
+
+export const FlexCenterColText = {
+    ...FlexColCC,
     textAlign: 'center' as 'center'
 };
 
