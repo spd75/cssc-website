@@ -30,7 +30,7 @@ import ContactUs from './components/page-home/section-contact/ContactUs';
 import { ThisExpression } from 'typescript';
 
 /** Components for Login */
-import AccountScreen from './components/page-login/AccountScreen';
+import AccountScreen from './components/page-create-account/AccountScreen';
 
 const navFunctions = [
     () => console.log('club news!'),
@@ -49,21 +49,24 @@ const eventData = [
         month: 'June',
         day: '10',
         imgPath: Dummy,
-        text: 'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
+        text:
+            'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
     },
     {
         title: 'Start of JO week',
         month: 'June',
         day: '10',
         imgPath: Dummy,
-        text: 'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
+        text:
+            'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
     },
     {
         title: 'Start of JO week',
         month: 'June',
         day: '10',
         imgPath: Dummy,
-        text: 'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
+        text:
+            'Every year we dedicate a week in September to our JOs. JO week consists of multiple bonding events where our exec board can really get to know the club’s JOs.'
     }
 ];
 

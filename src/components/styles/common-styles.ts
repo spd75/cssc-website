@@ -10,6 +10,19 @@ export const FlexCS = {
     justifyContent: 'center'
 };
 
+export const FlexCSpace = {
+    display: 'flex',
+    alignItems: 'stretch',
+    justifyContent: 'space-between'
+};
+
+export const FlexColCStart = {
+    flexDirection: 'column' as 'column',
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'center'
+};
+
 export const FlexColCC = {
     ...FlexCC,
     flexDirection: 'column' as 'column'

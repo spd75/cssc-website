@@ -2,7 +2,7 @@ import Responsive from '../super-comps/Responsive';
 
 const DEFAULT_TEXT_FAMILY = 'Arvo';
 const DEFAULT_TEXT_COL = '#505050';
-const DEFAULT_BASE_PADD = 10;
+const DEFAULT_BASE_PADD = 16;
 
 type TextFieldProps = {
     placeholder: string;
@@ -10,6 +10,7 @@ type TextFieldProps = {
     size: number;
     width?: string;
     height?: string;
+    password?: boolean;
 };
 
 export default class ResponsiveTextField extends Responsive<TextFieldProps> {
@@ -47,6 +48,7 @@ export default class ResponsiveTextField extends Responsive<TextFieldProps> {
         }
         return (
             <input
+                type={this.props.password ? 'password' : 'text'}
                 style={this.inputStyle()}
                 placeholder={this.props.placeholder + '...'}
                 onChange={this.props.onChange}

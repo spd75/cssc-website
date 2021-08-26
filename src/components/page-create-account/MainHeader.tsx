@@ -1,4 +1,3 @@
-import * as CommonStyles from '../styles/common-styles';
 import * as Universal from '../../universal';
 import ResponsiveText from '../common-comps/ResponsiveText';
 import ResponsiveActionText from '../common-comps/ResponsiveActionText';
@@ -20,10 +19,10 @@ export default class Header extends React.Component<any, any> {
     render = () => {
         return (
             <div style={this.containStyle()}>
-                <ResponsiveText size={42} color={'#FFF'}>
+                <ResponsiveText size={42} color={'#FFF'} padding="1% 0">
                     Create an Account to Become a Member of CSSC
                 </ResponsiveText>
-                <ResponsiveText size={26} color={'#FFF'}>
+                <ResponsiveText size={26} color={'#FFF'} padding="1% 0">
                     Note: Members that want full access to club trips, events, and services will
                     first have to pay club dues. This year, club dues will be $30. You will be
                     limited in your access to the club website and club events until you pay this
@@ -34,6 +33,7 @@ export default class Header extends React.Component<any, any> {
                     underline={true}
                     primColor={'#FFF'}
                     hoverColor={Universal.WEB_BLUE_HOVER}
+                    padding="1% 0"
                 >
                     Back to Home Page
                 </ResponsiveActionText>

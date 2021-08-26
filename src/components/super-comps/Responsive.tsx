@@ -19,6 +19,5 @@ export default class Responsive<T> extends React.Component<T, any> {
 
     updateWindowDimensions = () => {
         this.setState({ winWidth: window.innerWidth });
-        console.log(this.state.winWidth);
     };
 }
