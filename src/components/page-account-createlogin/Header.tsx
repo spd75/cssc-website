@@ -3,9 +3,17 @@ import ResponsiveText from '../common-comps/ResponsiveText';
 import ResponsiveActionText from '../common-comps/ResponsiveActionText';
 import React from 'react';
 
-export default class Header extends React.Component<any, any> {
-    constructor(props: any) {
+type HeaderProps = {
+    title: String;
+    note: String;
+};
+
+export default class Header extends React.Component<HeaderProps, any> {
+    props: HeaderProps;
+
+    constructor(props: HeaderProps) {
         super(props);
+        this.props = props;
     }
 
     containStyle = () => {
@@ -20,13 +28,10 @@ export default class Header extends React.Component<any, any> {
         return (
             <div style={this.containStyle()}>
                 <ResponsiveText size={42} color={'#FFF'} padding="1% 0">
-                    Create an Account to Become a Member of CSSC
+                    {this.props.title}
                 </ResponsiveText>
                 <ResponsiveText size={26} color={'#FFF'} padding="1% 0">
-                    Note: Members that want full access to club trips, events, and services will
-                    first have to pay club dues. This year, club dues will be $30. You will be
-                    limited in your access to the club website and club events until you pay this
-                    small fee.
+                    {this.props.note}
                 </ResponsiveText>
                 <ResponsiveActionText
                     size={18}

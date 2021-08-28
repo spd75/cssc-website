@@ -30,7 +30,7 @@ import ContactUs from './components/page-home/section-contact/ContactUs';
 import { ThisExpression } from 'typescript';
 
 /** Components for Login */
-import AccountScreen from './components/page-create-account/AccountScreen';
+import AccountScreen from './components/page-account-createlogin/CreateOrLoginScreen';
 
 const navFunctions = [
     () => console.log('club news!'),
@@ -171,7 +171,7 @@ class App extends React.Component<any, any> {
 ReactDOM.render(
     <React.StrictMode>
         <App>
-            <AccountScreen />
+            <AccountScreen isCreateAccountScreen={false} />
         </App>
     </React.StrictMode>,
     document.getElementById('root')

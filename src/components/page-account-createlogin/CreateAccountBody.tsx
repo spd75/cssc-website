@@ -15,7 +15,7 @@ const PASS_TEXT_FIELD_WIDTH = '49%';
 
 const SUBMIT_SECTION_TEXT_SIZE = 20;
 
-export default class Body extends React.Component<any, any> {
+export default class CreateAccountBody extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
 
@@ -185,7 +185,7 @@ export default class Body extends React.Component<any, any> {
                             Click here
                         </ResponsiveActionText>
                         <ResponsiveText size={SUBMIT_SECTION_TEXT_SIZE} padding="2% 0">
-                            &nbsp;to sign up.
+                            &nbsp;to login.
                         </ResponsiveText>
                     </div>
                 </div>

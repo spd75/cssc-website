@@ -11,6 +11,7 @@ type TextFieldProps = {
     width?: string;
     height?: string;
     password?: boolean;
+    margins?: string;
 };
 
 export default class ResponsiveTextField extends Responsive<TextFieldProps> {
@@ -30,6 +31,7 @@ export default class ResponsiveTextField extends Responsive<TextFieldProps> {
             fontSize: `${this.props.size * this.state.winWidth * 0.0004}px`,
             color: DEFAULT_TEXT_COL,
             padding: `${stanPadd} ${stanPadd} ${this.props.height || stanPadd} ${stanPadd}`,
+            margin: `${this.props.margins || 0}`,
             width: this.props.width || 'auto',
             borderRadius: '0',
             borderWidth: `${3 * this.state.winWidth * 0.0004}px`

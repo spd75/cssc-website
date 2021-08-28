@@ -28,6 +28,11 @@ export const FlexColCC = {
     flexDirection: 'column' as 'column'
 };
 
+export const FlexColCSpace = {
+    ...FlexCSpace,
+    flexDirection: 'column' as 'column'
+};
+
 export const FlexCenterColText = {
     ...FlexColCC,
     textAlign: 'center' as 'center'
