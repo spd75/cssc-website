@@ -1,10 +1,11 @@
 import * as CommonStyles from '../styles/common-styles';
-import * as Universal from '../../universal';
+import * as UniversalConstants from '../../universal/constants';
 import React from 'react';
 import ResponsiveActionText from '../common-comps/ResponsiveActionText';
 import ResponsiveTextField from '../common-comps/ResponsiveTextField';
 import ResponsiveText from '../common-comps/ResponsiveText';
 import StanButton from '../common-comps/StanButton';
+import * as UniNav from '../../universal/navigations';
 
 const TITLE_SIZE = 36;
 const TEXT_FIELD_SIZE = 28;
@@ -180,7 +181,8 @@ export default class CreateAccountBody extends React.Component<any, any> {
                             padding="2% 0"
                             underline={true}
                             primColor="#505050"
-                            hoverColor={Universal.WEB_BLUE_HOVER}
+                            hoverColor={UniversalConstants.WEB_BLUE_HOVER}
+                            onClick={UniNav.toLogin}
                         >
                             Click here
                         </ResponsiveActionText>

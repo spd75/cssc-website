@@ -1,17 +1,17 @@
-import * as Universal from '../../universal';
+import * as UniversalConstants from '../../universal/constants';
 import * as CommonStyles from '../styles/common-styles';
 import Hoverable from '../super-comps/Hoverable';
 import ResponsiveText from './ResponsiveText';
 
-const BUTTON_PRIM_COL = Universal.WEB_BLUE;
-const BUTTON_HOVER_COL = Universal.WEB_BLUE_HOVER;
-const BUTTON_WIDTH = Universal.MAX_CONTENT;
-const BUTTON_HEIGHT = Universal.MAX_CONTENT;
+const BUTTON_PRIM_COL = UniversalConstants.WEB_BLUE;
+const BUTTON_HOVER_COL = UniversalConstants.WEB_BLUE_HOVER;
+const BUTTON_WIDTH = UniversalConstants.MAX_CONTENT;
+const BUTTON_HEIGHT = UniversalConstants.MAX_CONTENT;
 const BUTTON_PADDING = '2% 8%';
 
-const TEXT_PRIM_COL = Universal.WHITE;
+const TEXT_PRIM_COL = UniversalConstants.WHITE;
 const TEXT_SIZE = '12px';
-const TEXT_FONT_FAMILY = Universal.MAIN_FONT;
+const TEXT_FONT_FAMILY = UniversalConstants.MAIN_FONT;
 
 type StanButtonProps = {
     title: string;

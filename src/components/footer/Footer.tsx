@@ -1,4 +1,4 @@
-import * as Universal from '../../universal';
+import * as UniversalConstants from '../../universal/constants';
 import React from 'react';
 import ResponsiveText from '../common-comps/ResponsiveText';
 
@@ -11,7 +11,7 @@ export default class Footer extends React.Component<any, any> {
     }
 
     containerStyle = () => ({
-        backgroundColor: Universal.WEB_BLUE,
+        backgroundColor: UniversalConstants.WEB_BLUE,
         textAlign: 'center' as 'center',
         padding: CONTAIN_PADD
     });
@@ -19,8 +19,8 @@ export default class Footer extends React.Component<any, any> {
     render = () => {
         return (
             <div style={this.containerStyle()}>
-                <ResponsiveText size={TEXT_SIZE} color={Universal.WHITE}>
-                    {Universal.FOOTER_TEXT}
+                <ResponsiveText size={TEXT_SIZE} color={UniversalConstants.WHITE}>
+                    {UniversalConstants.FOOTER_TEXT}
                 </ResponsiveText>
             </div>
         );

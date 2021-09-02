@@ -1,5 +1,5 @@
 import * as CommonStyles from '../../styles/common-styles';
-import * as Universal from '../../../universal';
+import * as UniversalFunctions from '../../../universal/genfunctions';
 import ContainImage from '../../common-comps/ContainImage';
 import { InfoBoxProps } from '../../common-comps/InfoBox';
 import React from 'react';
@@ -31,8 +31,8 @@ export default class Why extends React.Component<WhyProps, any> {
     constructor(props: WhyProps) {
         super(props);
 
-        Universal.validateLength(props.data, 3, 'Data', 'Why');
-        Universal.validateLength(props.imgPaths, 3, 'imgPaths', 'Why');
+        UniversalFunctions.validateLength(props.data, 3, 'Data', 'Why');
+        UniversalFunctions.validateLength(props.imgPaths, 3, 'imgPaths', 'Why');
         this.props = props;
     }
 

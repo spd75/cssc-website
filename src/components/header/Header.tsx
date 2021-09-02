@@ -3,8 +3,6 @@ import React from 'react';
 import NavBar from './NavBar';
 import SlideshowIndicator from './sub-comps/SlideshowIndicator';
 
-const IMG_RATIO = 0.5;
-
 const NAV_LINKS = ['Club News', 'Trips', 'Equipment', 'About Us', 'Contact Us'];
 const ON_CLICKS = [
     () => console.log('Club news'),

@@ -1,7 +1,8 @@
-import * as Universal from '../../universal';
+import * as UniversalConstants from '../../universal/constants';
 import ResponsiveText from '../common-comps/ResponsiveText';
 import ResponsiveActionText from '../common-comps/ResponsiveActionText';
 import React from 'react';
+import * as UniNav from '../../universal/navigations';
 
 type HeaderProps = {
     title: String;
@@ -18,7 +19,7 @@ export default class Header extends React.Component<HeaderProps, any> {
 
     containStyle = () => {
         return {
-            backgroundColor: Universal.WEB_BLUE,
+            backgroundColor: UniversalConstants.WEB_BLUE,
             margin: 'auto',
             padding: '2%'
         };
@@ -37,8 +38,9 @@ export default class Header extends React.Component<HeaderProps, any> {
                     size={18}
                     underline={true}
                     primColor={'#FFF'}
-                    hoverColor={Universal.WEB_BLUE_HOVER}
+                    hoverColor={UniversalConstants.WEB_BLUE_HOVER}
                     padding="1% 0"
+                    onClick={UniNav.toHome}
                 >
                     Back to Home Page
                 </ResponsiveActionText>

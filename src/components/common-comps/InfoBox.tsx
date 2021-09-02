@@ -1,5 +1,5 @@
 import * as CommonStyles from '../styles/common-styles';
-import * as Universal from '../../universal';
+import * as Universal from '../../universal/constants';
 import React from 'react';
 import ResponsiveText from './ResponsiveText';
 import StanButton from './StanButton';

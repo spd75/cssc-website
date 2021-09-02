@@ -1,4 +1,4 @@
-import * as Universal from '../../../universal';
+import * as UniversalFunctions from '../../../universal/genfunctions';
 import React from 'react';
 import TextButton, { TextButtonProps } from '../../common-comps/TextButton';
 
@@ -19,7 +19,7 @@ export default class Join extends React.Component<JoinProps, any> {
 
     constructor(props: JoinProps) {
         super(props);
-        Universal.validateLength(props.data, 2, 'Data', 'Join');
+        UniversalFunctions.validateLength(props.data, 2, 'Data', 'Join');
         this.props = props;
     }
 

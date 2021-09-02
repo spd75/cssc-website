@@ -2,6 +2,7 @@ import * as CommonStyles from '../../styles/common-styles';
 import IconImage from '../sub-comps/IconImage';
 import NavBarButton from '../sub-comps/NavBarButton';
 import React from 'react';
+import * as UniNav from '../../../universal/navigations';
 
 // Icons
 import { FaFacebook } from 'react-icons/fa';
@@ -55,8 +56,8 @@ export default class EnderBar extends React.Component<any, any> {
         return (
             <div style={this.containerStyle()}>
                 <div style={this.innerContainerStyle()}>
-                    <NavBarButton onClick={() => console.log('a')}>Become a Member</NavBarButton>
-                    <NavBarButton onClick={() => console.log('b')}>Login</NavBarButton>
+                    <NavBarButton onClick={UniNav.toCreateAccount}>Become a Member</NavBarButton>
+                    <NavBarButton onClick={UniNav.toLogin}>Login</NavBarButton>
 
                     <div style={this.iconDivStyle()}>
                         <IconImage
