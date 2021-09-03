@@ -1,19 +1,12 @@
 import * as CommonStyles from '../styles/common-styles';
-import React from 'react';
+import React, { Ref } from 'react';
 import NavBar from './NavBar';
 import SlideshowIndicator from './sub-comps/SlideshowIndicator';
 
-const NAV_LINKS = ['Club News', 'Trips', 'Equipment', 'About Us', 'Contact Us'];
-const ON_CLICKS = [
-    () => console.log('Club news'),
-    () => console.log('Trips'),
-    () => console.log('Equipment'),
-    () => console.log('About Us'),
-    () => console.log('Contact Us')
-];
-
 type HeroImageProps = {
     path: string[];
+    navLinks: string[];
+    onClicks: (() => void)[];
 };
 
 export default class HeroHeader extends React.Component<HeroImageProps, any> {
@@ -23,8 +16,7 @@ export default class HeroHeader extends React.Component<HeroImageProps, any> {
         super(props);
         this.props = props;
 
-        const interval = window.setInterval(this.switchImage, 5000);
-
+        setInterval(this.switchImage, 5000);
         this.state = {
             pointer: 0
         };
@@ -49,10 +41,15 @@ export default class HeroHeader extends React.Component<HeroImageProps, any> {
 
     render = () => {
         const st = this.state;
+        const slideShowIndicator =
+            this.props.path.length > 1 ? (
+                <SlideshowIndicator totalNum={this.props.path.length} pointer={st.pointer} />
+            ) : null;
+
         return (
             <div style={this.imgStyle()}>
-                <NavBar navLinks={NAV_LINKS} onClicks={ON_CLICKS} />
-                <SlideshowIndicator totalNum={this.props.path.length} pointer={st.pointer} />
+                <NavBar navLinks={this.props.navLinks} onClicks={this.props.onClicks} />
+                {slideShowIndicator}
             </div>
         );
     };

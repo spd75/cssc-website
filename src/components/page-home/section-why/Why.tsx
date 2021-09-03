@@ -1,11 +1,11 @@
 import * as CommonStyles from '../../styles/common-styles';
+import * as UniversalConstants from '../../../universal/constants';
 import * as UniversalFunctions from '../../../universal/genfunctions';
 import ContainImage from '../../common-comps/ContainImage';
 import { InfoBoxProps } from '../../common-comps/InfoBox';
 import React from 'react';
 import ResponsiveText from '../../common-comps/ResponsiveText';
 
-const CONTAIN_BG_COL = '#F0F0F0';
 const CONTAIN_PADD = '4% 1% 2.5% 1%';
 
 const VERTICAL_CONTAIN_WIDTH = '130%';
@@ -38,7 +38,7 @@ export default class Why extends React.Component<WhyProps, any> {
 
     containerStyle = () => {
         return {
-            backgroundColor: CONTAIN_BG_COL,
+            backgroundColor: UniversalConstants.LIGHT_GRAY,
             padding: CONTAIN_PADD,
             textAlign: 'center' as 'center'
         };

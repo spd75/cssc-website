@@ -17,6 +17,11 @@ import Why2 from '../../assets/why2.jpg';
 import Why3 from '../../assets/why3.jpeg';
 import Ikon1 from '../../assets/ikon.jpg';
 import Dummy from '../../assets/dummy.png';
+import NavLinkBar from '../header/elements/NavLinkBar';
+
+import * as UniNav from '../../universal/navigations';
+
+const NAV_LINKS = ['Club News', 'Trips', 'Equipment', 'About Us', 'Contact Us'];
 
 const eventData = [
     {
@@ -95,15 +100,30 @@ const ikonContainData = {
         'Gain access to 45 mountains including Snowbird, Alta, Big Sky, Killington, Jackson Hole, Sugarbush, and so many more.'
 };
 
-export default class CreateOrLoginScreen extends React.Component<any, any> {
+export default class HomeScreen extends React.Component<any, any> {
+    contactUsRef: React.RefObject<HTMLDivElement>;
+    onClicks: (() => void)[];
+
     constructor(props: any) {
         super(props);
+        this.contactUsRef = React.createRef();
+        this.onClicks = [
+            () => UniNav.toClubNews(),
+            () => console.log('Trips'),
+            () => console.log('Equipment'),
+            () => console.log('About Us'),
+            () => window.scrollTo({ top: this.contactUsRef.current?.offsetTop, behavior: 'smooth' })
+        ];
     }
 
     render = () => {
         return (
             <div>
-                <Header path={[Hero1, Hero2, Hero3, Hero4]} />
+                <Header
+                    path={[Hero1, Hero2, Hero3, Hero4]}
+                    navLinks={NAV_LINKS}
+                    onClicks={this.onClicks}
+                />
                 <Events>{eventData}</Events>
                 <Why data={whyData} imgPaths={[Why1, Why2, Why3]} />
                 <Join data={joinData} />
@@ -113,7 +133,9 @@ export default class CreateOrLoginScreen extends React.Component<any, any> {
                     infoText={ikonText}
                     buttonText={ikonButtonText}
                 />
-                <ContactUs />
+                <div ref={this.contactUsRef}>
+                    <ContactUs />
+                </div>
                 <Footer />
             </div>
         );

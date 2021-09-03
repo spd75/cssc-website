@@ -16,6 +16,12 @@ export const FlexCSpace = {
     justifyContent: 'space-between'
 };
 
+export const FlexCStretch = {
+    display: 'flex',
+    alignItems: 'stretch',
+    justifyContent: 'stretch'
+};
+
 export const FlexColCStart = {
     flexDirection: 'column' as 'column',
     display: 'flex',

@@ -8,6 +8,7 @@ import { homeLocURL, loginLocURL, createAccountLocURL } from './universal/naviga
 
 import HomeScreen from './components/page-home/HomeScreen';
 import AccountScreen from './components/page-account-createlogin/CreateOrLoginScreen';
+import ClubNewsScreen from './components/page-club-news/ClubNewsScreen';
 
 class App extends React.Component<any, any> {
     props: any;
@@ -39,18 +40,14 @@ function Website() {
     const routes = {
         '/': () => <HomeScreen />,
         '/member/login': () => <AccountScreen isCreateAccountScreen={false} />,
-        '/member/create-account': () => <AccountScreen isCreateAccountScreen={true} />
+        '/member/create-account': () => <AccountScreen isCreateAccountScreen={true} />,
+        '/club-news': () => <ClubNewsScreen />
     };
     const routeResults = useRoutes(routes);
     return <App> {routeResults} </App>;
 }
 
 // *** Main Function that Runs Site ***
-ReactDOM.render(
-    <React.Fragment>
-        <Website />
-    </React.Fragment>,
-    document.getElementById('root')
-);
+ReactDOM.render(<Website />, document.getElementById('root'));
 
-reportWebVitals();
+// reportWebVitals();
