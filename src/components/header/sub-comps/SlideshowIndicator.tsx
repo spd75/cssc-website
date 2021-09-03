@@ -32,12 +32,9 @@ export default class SlideshowIndicator extends React.Component<SlideShowIndicat
     containerStyle = () => CommonStyles.FlexCC;
 
     indicatorStyle = (isCurrent: boolean) => ({
-        height: '0',
-        width: '0.5%',
-        paddingBottom: '0.5%',
+        ...CommonStyles.circle('0.5%'),
         margin: '0 0.5%',
         backgroundColor: !isCurrent ? '#fff' : '#48A8DE',
-        borderRadius: '50%',
         boxShadow: '1px 1px 4px #000'
     });
 

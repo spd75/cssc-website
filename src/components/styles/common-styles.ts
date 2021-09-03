@@ -59,3 +59,10 @@ export const HeightWidth = (height: string, width: string) => ({
     height: height,
     width: width
 });
+
+export const circle = (radius: string) => ({
+    height: '0',
+    width: radius,
+    paddingBottom: radius,
+    borderRadius: '50%'
+});

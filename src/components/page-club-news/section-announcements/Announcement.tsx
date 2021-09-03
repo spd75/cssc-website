@@ -3,11 +3,8 @@ import * as UniversalConstants from '../../../universal/constants';
 import React from 'react';
 import ResponsiveText from '../../common-comps/ResponsiveText';
 
-const DATE_TEXT_COLOR = 'white';
-const DATE_MONTH_TEXT_SIZE = 65;
-const DATE_DAY_TEXT_SIZE = 70;
+const DATE_TEXT_SIZE = 70;
 
-const CONTENT_TEXT_COLOR = 'black';
 const CONTENT_TITLE_SIZE = 50;
 const CONTENT_TEXT_SIZE = 32;
 
@@ -53,23 +50,35 @@ export default class Announcement extends React.Component<AnnouncementProps, any
         return (
             <div style={this.containerStyle()}>
                 <div style={this.dateContainerStyle()}>
-                    <ResponsiveText size={DATE_MONTH_TEXT_SIZE} color={DATE_TEXT_COLOR} padding="0">
+                    <ResponsiveText
+                        size={DATE_TEXT_SIZE}
+                        color={UniversalConstants.WHITE}
+                        padding="0"
+                    >
                         {month}
                     </ResponsiveText>
-                    <ResponsiveText size={DATE_DAY_TEXT_SIZE} color={DATE_TEXT_COLOR} padding="0">
+                    <ResponsiveText
+                        size={DATE_TEXT_SIZE}
+                        color={UniversalConstants.WHITE}
+                        padding="0"
+                    >
                         {this.props.date.getDay()}
                     </ResponsiveText>
                 </div>
                 <div style={this.contentContainerStyle()}>
                     <ResponsiveText
                         size={CONTENT_TITLE_SIZE}
-                        color={CONTENT_TEXT_COLOR}
+                        color={UniversalConstants.LIGHT_BLACK}
                         padding="0 0 1% 0"
                         underline={true}
                     >
                         {this.props.title}
                     </ResponsiveText>
-                    <ResponsiveText size={CONTENT_TEXT_SIZE} color={CONTENT_TEXT_COLOR} padding="0">
+                    <ResponsiveText
+                        size={CONTENT_TEXT_SIZE}
+                        color={UniversalConstants.LIGHT_BLACK}
+                        padding="0"
+                    >
                         {this.props.children}
                     </ResponsiveText>
                 </div>
