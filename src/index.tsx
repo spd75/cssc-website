@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import WWC from './windowWidthContext';
-import { useRoutes } from 'hookrouter';
+import HR from 'hookrouter';
 import { homeLocURL, loginLocURL, createAccountLocURL } from './universal/navigations';
 
 import HomeScreen from './components/page-home/HomeScreen';
@@ -43,7 +43,7 @@ function Website() {
         '/member/create-account': () => <AccountScreen isCreateAccountScreen={true} />,
         '/club-news': () => <ClubNewsScreen />
     };
-    const routeResults = useRoutes(routes);
+    const routeResults = HR.useRoutes(routes);
     return <App> {routeResults} </App>;
 }
 
