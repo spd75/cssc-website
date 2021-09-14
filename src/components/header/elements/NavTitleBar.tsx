@@ -1,7 +1,7 @@
 import * as CommonStyles from '../../styles/common-styles';
 import * as Universal from '../../../universal/constants';
 import React from 'react';
-import { ReactComponent as Logo } from '../../../assets/Logo.svg';
+import { ReactComponent as Logo } from '../../../assets/logo.svg';
 
 const CONTAIN_BG_COL = Universal.WEB_BLUE;
 const CONTAIN_WIDTH = '10%';
