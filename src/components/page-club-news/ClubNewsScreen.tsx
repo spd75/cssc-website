@@ -1,13 +1,28 @@
 import Announcement from './section-announcements/Announcement';
 import Event from './section-upcoming-events/Event';
 import React from 'react';
-import Dummy from '../../assets/dummy.png';
+import Footer from '../footer/Footer';
+import Header from '../header/Header';
+import Hero1 from '../../assets/hero1.jpg';
+
+import * as UniNav from '../../universal/navigations';
+import * as UniCon from '../../universal/constants';
 
 import * as CommonStyles from '../styles/common-styles';
 
 export default class ClubNewsScreen extends React.Component<any, any> {
+    onClicks: (() => void)[];
+
     constructor(props: any) {
         super(props);
+
+        this.onClicks = [
+            () => UniNav.toClubNews(),
+            () => console.log('Trips'),
+            () => console.log('Equipment'),
+            () => console.log('About Us'),
+            () => UniNav.toHome()
+        ];
     }
 
     containerStyle = () => ({
@@ -20,15 +35,9 @@ export default class ClubNewsScreen extends React.Component<any, any> {
 
     render = () => {
         return (
-            <div style={this.containerStyle()}>
-                {/* <Announcement date={new Date(2021, 9, 21)} title="Find Us at Club Fest">
-                    We will have a Cornell Ski and Snowboard Club table at club fest. Visit us to
-                    learn more about the club and meet some of our members.
-                </Announcement> */}
-                <Event date={new Date(2021, 9, 21)} img={Dummy} title="O-Week">
-                    This year we will be hosting several fun social events for active and even new
-                    members who are looking to give ski club a try.
-                </Event>
+            <div>
+                <Header path={[Hero1]} navLinks={UniCon.NAV_LINKS} onClicks={this.onClicks} />
+                <Footer />
             </div>
         );
     };

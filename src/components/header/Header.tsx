@@ -43,7 +43,14 @@ export default class HeroHeader extends React.Component<HeroImageProps, any> {
         const st = this.state;
         const slideShowIndicator =
             this.props.path.length > 1 ? (
-                <SlideshowIndicator totalNum={this.props.path.length} pointer={st.pointer} />
+                <SlideshowIndicator
+                    totalNum={this.props.path.length}
+                    pointer={st.pointer}
+                    size="0.5%"
+                    separation="0 0.5%"
+                    color="#48A8DE"
+                    boxShadow="1px 1px 4px #888"
+                />
             ) : null;
 
         return (

@@ -9,6 +9,10 @@ PointerExceededTotal.name = 'PointerExceededTotal';
 type SlideShowIndicatorProps = {
     totalNum: number;
     pointer: number;
+    size: string;
+    separation: string;
+    color: string;
+    boxShadow?: string;
 };
 
 export default class SlideshowIndicator extends React.Component<SlideShowIndicatorProps, any> {
@@ -29,13 +33,16 @@ export default class SlideshowIndicator extends React.Component<SlideShowIndicat
         });
     };
 
-    containerStyle = () => CommonStyles.FlexCC;
+    containerStyle = () => ({
+        ...CommonStyles.FlexCC,
+        borderRadius: '50%'
+    });
 
     indicatorStyle = (isCurrent: boolean) => ({
-        ...CommonStyles.circle('0.5%'),
-        margin: '0 0.5%',
-        backgroundColor: !isCurrent ? '#fff' : '#48A8DE',
-        boxShadow: '1px 1px 4px #000'
+        ...CommonStyles.circle(this.props.size),
+        margin: this.props.separation,
+        backgroundColor: !isCurrent ? '#fff' : `${this.props.color}`,
+        boxShadow: `${this.props.boxShadow}`
     });
 
     renderIndicators = () => {

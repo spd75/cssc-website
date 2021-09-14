@@ -21,3 +21,4 @@ export const MONTHINDEX_TO_ABBREVIATION = [
     'Nov',
     'Dec'
 ];
+export const NAV_LINKS = ['Club News', 'Trips', 'Equipment', 'About Us', 'Contact Us'];

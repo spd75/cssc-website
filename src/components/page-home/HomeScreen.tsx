@@ -17,11 +17,9 @@ import Why2 from '../../assets/why2.jpg';
 import Why3 from '../../assets/why3.jpeg';
 import Ikon1 from '../../assets/ikon.jpg';
 import Dummy from '../../assets/dummy.png';
-import NavLinkBar from '../header/elements/NavLinkBar';
 
 import * as UniNav from '../../universal/navigations';
-
-const NAV_LINKS = ['Club News', 'Trips', 'Equipment', 'About Us', 'Contact Us'];
+import * as UniCon from '../../universal/constants';
 
 const eventData = [
     {
@@ -121,7 +119,7 @@ export default class HomeScreen extends React.Component<any, any> {
             <div>
                 <Header
                     path={[Hero1, Hero2, Hero3, Hero4]}
-                    navLinks={NAV_LINKS}
+                    navLinks={UniCon.NAV_LINKS}
                     onClicks={this.onClicks}
                 />
                 <Events>{eventData}</Events>
